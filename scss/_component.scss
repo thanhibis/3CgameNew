@@ -1,0 +1,126 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+}
+
+
+
+
+
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+// Image position control
+.c-pull{
+	&--left{
+		margin-left: calc(((100vw - 100%) / 2) * -1)
+	}
+	&--right{
+		margin-right: calc(((100vw - 100%) / 2) * -1)
+	}
+    margin: 0 min(-5vw, (100% - 100vw) / 2);
+}
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+		@include fts(16,24);
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+		display: block;
+		text-align: center;
+		@include font-size(32);
+		line-height: 1.4;
+		font-weight: 500;
+		position: relative;
+		&:after{
+			content: "";
+			width: 36px;
+			height: 36px;
+			background: url("../img/common/arrow-right.png")no-repeat;
+			background-size: 100%;
+			display: inline-block;
+			margin: 0 0 0 15px;
+		}
+		span{
+			color: $orange;
+		}
+	}
+
+}
+
+//btn
+.c-btn{
+	&__01{
+		display: inline-block;
+		line-height: 1;
+		color: white;
+		background: $orange;
+		border-radius: 40px;
+		@include font-size(18);
+		padding: 10px 30px;
+	}
+}
+
+
+//fade up
+.js-scrollin {
+	opacity: 0;
+	-webkit-transform: translate(0, 70px);
+	-ms-transform: translate(0, 70px);
+	transform: translate(0, 70px);
+	&.active{
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+		-webkit-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		-o-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+}
+
+
+
