@@ -75,6 +75,10 @@ Component
 		line-height: 1.4;
 		font-weight: 500;
 		position: relative;
+		margin-bottom: 15px;
+		@include mq(){
+			@include font-size(24);
+		}
 		&:after{
 			content: "";
 			width: 36px;
@@ -82,7 +86,10 @@ Component
 			background: url("../img/common/arrow-right.png")no-repeat;
 			background-size: 100%;
 			display: inline-block;
-			margin: 0 0 0 15px;
+			margin: 0 0 -5px 15px;
+			@include mq(){
+				margin-bottom: -10px;
+			}
 		}
 		span{
 			color: $orange;
@@ -101,6 +108,10 @@ Component
 		border-radius: 40px;
 		@include font-size(18);
 		padding: 10px 30px;
+		&--dark{
+			background: #454545;
+			padding: 10px 20px;
+		}
 	}
 }
 

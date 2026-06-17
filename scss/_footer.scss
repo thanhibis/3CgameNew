@@ -1,5 +1,156 @@
 @use "vars" as *;
 
 #footer{
+	background: #F5F5F5;
+	padding: 50px 0;
+	position: relative;
+	.footer-block{
+		@include flex(0,0,wrap);
+		&__logo{
+			width: 250px;
+			@include mq(){
+				width: 100%;
+				margin-bottom: 30px;
+			}
+			.footer-logo{
+				display: block;
+				width: 150px;
+				margin-bottom: 30px;
+			}
+		}
+		&__sns{
+			@include flex(0,0,wrap);
+			li{
+				margin: 0 10px 10px 0;
+				a{
+					display: block;
+					img{
+						width: 36px;
+					}
+				}
+			}
+		}
+		&__ct{
+			width: calc(100% - 250px);
+			padding: 0 0 0 20px;
+			@include flex(0,0,wrap);
+			@include mq(){
+				width: 100%;
+				padding: 0;
+				display: block;
+			}
+			&-item{
+				@include mq(md-min){
+					width: 30%;
+					padding: 0 10px 0 0;
+					@include mq(tb){
+						width: 50%;
+					}
+					&:last-child{
+						width: 40%;
+						padding-right: 0;
+						@include mq(tb){
+							width: 100%;
+							padding-top: 30px;
+						}
+					}
+				}
+				@include mq(){
+					margin-bottom: 30px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+			ul{
+				li{
+					margin-bottom: 5px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					a{
+						display: block;
+						color: #454545;
+					}
+				}
+			}
+			&-ttl{
+				display: block;
+				@include font-size(18);
+				font-weight: 300;
+				margin: 0 0 15px;
+			}
+			&-map{
+				position: relative;
+				color: black;
+				@include fts(14,20);
+				padding: 0 0 0 30px;
+				margin: 0 0 15px;
+				&:before{
+					content: "";
+					width: 24px;
+					height: 24px;
+					background: url("../img/common/icon-09.png")no-repeat;
+					background-size: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+			&-note{
+				padding: 10px;
+				background: #F0EDED;
+				@include fts(14,20);
+				margin: 0 0 15px;
+			}
+			&-support{
+				margin-bottom: 15px;
+				a{
+					display: inline-block;
+					position: relative;
+					padding: 0 0 0 25px;
+					margin: 0 30px 0 0;
+					color: #454545;
+					img{
+						position: absolute;
+						@include v-align;
+						left: 0;
+						width: 20px;
+					}
+				}
+			}
+			&-nooty{
+				img{
+					width: 132px;
+				}
+			}
+		}
+		&__ttl{
+			display: block;
+			color: $orange;
+			@include font-size(18);
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+	}
+}
 
+#backtop{
+	display: block;
+	width: 48px;
+	height: 48px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	opacity: 0;
+	visibility: hidden;
+	&.on{
+		opacity: 1;
+		visibility: visible;
+	}
+	&.active{
+		position: absolute;
+		bottom: auto;
+		top: -24px;
+	}
 }

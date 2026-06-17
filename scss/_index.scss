@@ -2,11 +2,25 @@
 .mv-list{
 	.swiper-slide{
 		position: relative;
+		border-radius: 30px;
+		overflow: hidden;
 		img{
 			width: 100%;
 			height: 502px;
 			@include ob;
-			border-radius: 30px;
+
+		}
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, #68271E 100%);
+			@include mq(){
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 19.23%, #68271E 79.33%);
+			}
 		}
 	}
 	&__note{
@@ -15,10 +29,14 @@
 		@include fts(18,24);
 		position: absolute;
 		bottom: 70px;
-		left: 0;
-		right: 0;
+		left: 15px;
+		right: 15px;
 		max-width: 750px;
 		margin: 0 auto;
+		@include mq(){
+			@include fts(16,24);
+			bottom: 60px;
+		}
 		p{
 			margin-bottom: 20px;
 		}
@@ -31,6 +49,9 @@
 		bottom: 30px;
 		padding: 0 30px;
 		z-index: 1;
+		@include mq(){
+			justify-content: center;
+		}
 		span{
 			display: block;
 			width: 16px;
@@ -38,6 +59,10 @@
 			border: 1px solid white;
 			margin: 0 5px !important;
 			background: none;
+			@include mq(){
+				width: 8px;
+				height: 8px;
+			}
 		}
 		.swiper-pagination-bullet-active{
 			background: white;
@@ -47,14 +72,23 @@
 
 .sec-menu{
 	padding: 100px 0;
+	@include mq(){
+		padding: 50px 0;
+	}
 }
 .heading-note{
 	text-align: center;
 	margin-bottom: 50px;
+	@include mq(){
+		margin-bottom: 30px;
+	}
 }
 
 .show-menu{
 	margin: -20px -30px 0;
+	@include mq(){
+		margin: -20px -20px 0;
+	}
 	&__box{
 		display: block;
 		position: relative;
@@ -67,6 +101,9 @@
 			content: "";
 			display: block;
 			padding: 120% 0 0;
+			@include mq(){
+				padding: 140% 0 0;
+			}
 		}
 		img{
 			position: absolute;
@@ -80,7 +117,10 @@
 	.swiper-slide{
 		@include smooth-transition;
 		padding: 50px 30px 0;
-		&.swiper-slide-next{
+		@include mq(){
+			padding: 50px 20px 0;
+		}
+		&.swiper-slide-active{
 			transform: scale(1.18);
 		}
 	}
@@ -93,6 +133,11 @@
 		color: white;
 		@include font-size(14);
 		padding: 0 0 0 55px;
+		@include mq(){
+			left: 10px;
+			right: 10px;
+			@include font-size(10);
+		}
 		img{
 			width: 44px;
 			position: absolute;
@@ -104,18 +149,28 @@
 			@include font-size(17);
 			font-weight: 500;
 			//font-family: $font-kanit;
+			@include mq(){
+				@include font-size(13);
+			}
 		}
 	}
 	&__nav{
 		position: relative;
 		@include flex(center,center,wrap);
 		margin-top: 80px;
+		@include mq(){
+			margin-top: 50px;
+		}
 		&-next,&-prev{
 			width: 52px;
 			height: 52px;
 			display: block;
 			margin: 0;
 			cursor: pointer;
+			@include mq(){
+				width: 26px;
+				height: 26px;
+			}
 		}
 		&-next{
 			background: url("../img/common/next.png")no-repeat;
@@ -141,6 +196,9 @@
 				height: 8px;
 				background: #D9D9D9 !important;
 				margin: 0 15px !important;
+				@include mq(){
+					margin: 0 7px !important;
+				}
 				&.swiper-pagination-bullet-active{
 					background: $green !important;
 				}
@@ -151,18 +209,25 @@
 
 .sec-news{
 	padding: 0 0 100px;
+	@include mq(){
+		padding: 0 0 50px;
+	}
 }
 
 .news-block{
 	@include flex(between,0,wrap);
 	&__first{
 		width: 48%;
+		@include mq(){
+			width: 100%;
+		}
 		&-box{
 			background: white;
 			height: 100%;
 			color: $basic;
 			display: block;
 			border-radius: 15px;
+			padding: 10px;
 		}
 		&-img{
 			position: relative;
@@ -183,6 +248,9 @@
 		}
 		&-ct{
 			padding: 20px;
+			@include mq(){
+				padding: 20px 10px;
+			}
 			&-category{
 				display: inline-block;
 				text-transform: uppercase;
@@ -199,13 +267,19 @@
 				display: block;
 				@include fts(20,26);
 				font-weight: 500;
+				@include mq(){
+					@include font-size(17);
+				}
 			}
 		}
 	}
 	&__list{
 		width: 48%;
+		@include mq(){
+			width: 100%;
+		}
 		&-item{
-			margin-bottom: 32px;
+			margin-bottom: 22px;
 			&:last-child{
 				margin-bottom: 0;
 			}
@@ -240,6 +314,111 @@
 			padding: 0 0 0 15px;
 			@include fts(20,26);
 			font-weight: 500;
+		}
+	}
+}
+
+.sec-banner{
+	padding: 100px 0 0;
+	@include mq(){
+		padding: 0 0 150px;
+	}
+}
+.banner-note{
+	background: $orange;
+	color: white;
+	border-radius: 10px;
+	position: relative;
+	padding: 50px 5%;
+	@include mq(){
+		padding: 20px 15px 50px;
+	}
+	&__ct{
+		max-width: 414px;
+		position: relative;
+		z-index: 1;
+		&-ttl{
+			display: block;
+			@include fts(32,40);
+			font-weight: 500;
+			margin-bottom: 20px;
+			@include mq(){
+				@include fts(24,32);
+			}
+		}
+		p{
+			margin-bottom: 20px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__img{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 63%;
+		@include mq(){
+			bottom: auto;
+			top: 83%;
+			left: 0;
+			width: 100%;
+			max-width: 400px;
+			margin: 0 auto;
+		}
+	}
+}
+
+.sec-support{
+	padding: 100px 0;
+	.c-ttl__01{
+		@include mq(sm){
+			&:after{
+				display: none;
+			}
+		}
+	}
+}
+
+.support-list{
+	margin: 0 -30px;
+	@include mq(){
+		margin: 0 -15px;
+	}
+	.swiper-slide{
+		padding: 0 30px;
+		@include mq(){
+			padding: 0 15px;
+		}
+		img{
+			width: auto;
+			height: 60px;
+			display: block;
+			margin: 0 auto;
+			@include mq(tb){
+				height: 40px;
+			}
+			@include mq(){
+				height: 30px;
+			}
+		}
+	}
+	&__pagination{
+		@include flex(center,center,wrap);
+		padding: 30px 0 0;
+		span{
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: #D9D9D9;
+			margin: 0 7px !important;
+			@include mq(){
+				width: 8px;
+				height: 8px;
+			}
+		}
+		.swiper-pagination-bullet-active{
+			background: $orange;
 		}
 	}
 }
