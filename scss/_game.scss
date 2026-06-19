@@ -1,0 +1,197 @@
+@use "vars" as *;
+.sec-game{
+	padding: 0 0 100px;
+	@include mq(){
+		padding: 0 0 50px;
+	}
+}
+
+.mv-game{
+	position: relative;
+	margin-bottom: 80px;
+	@include mq(){
+		margin-bottom: 50px;
+	}
+	&__nav{
+		&-img{
+			position: relative;
+			border-radius: 16px;
+			overflow: hidden;
+			//&:before{
+			//	content: "";
+			//	display: block;
+			//	padding: 40.5% 0 0;
+			//}
+			img{
+				width: 100%;
+				height: 486px;
+				@include ob;
+			}
+			&:after{
+				content: "";
+				position: absolute;
+				bottom: 0;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: linear-gradient(180deg, rgba(102, 102, 102, 0) 33.73%, rgba(0, 0, 0, 0.8) 87.01%),
+			}
+		}
+		&-ct{
+			position: absolute;
+			bottom: 100px;
+			left: 40px;
+			right: 40px;
+			color: white;
+			@include fts(14,20);
+			max-width: 564px;
+			@include mq(){
+				left: 15px;
+				right: 15px;
+			}
+			&-ttl{
+				display: block;
+				margin-bottom: 15px;
+				@include font-size(32);
+				font-weight: 500;
+				@include mq(){
+					@include font-size(24);
+				}
+			}
+		}
+	}
+	&__for{
+		position: absolute;
+		bottom: 20px;
+		left: 40px;
+		right: 40px;
+		@include mq(){
+			bottom: 15px;
+			left: 15px;
+			right: 15px;
+		}
+		.swiper-slide{
+			width: 54px;
+			cursor: pointer;
+		}
+		.swiper-slide-thumb-active{
+			.mv-game__for-img{
+				background:  $orange;
+			}
+		}
+		&-img{
+			width: 54px;
+			height: 54px;
+			background: rgba(white,0.2);
+			border-radius: 13px;
+			padding: 3px;
+			img{
+				width: 47px;
+				height: 47px;
+				@include ob;
+				border-radius: 10px;
+			}
+		}
+	}
+}
+
+.game-ttl{
+	display: block;
+	@include font-size(32);
+	line-height: 1.4;
+	font-weight: 500;
+	color: black;
+	margin-bottom: 20px;
+}
+
+.game-list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px 20px;
+	@include mq(tb){
+		grid-template-columns: 1fr 1fr;
+	}
+	@include mq(sm){
+		grid-template-columns: 1fr;
+	}
+	&__item{
+		position: relative;
+	}
+	&__img{
+		position: relative;
+		border-radius: 20px;
+		overflow: hidden;
+		&:before{
+			content: "";
+			display: block;
+			padding: 45% 0 0;
+		}
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@include ob;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(270deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.8) 100%)
+		}
+	}
+	&__ct{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: white;
+		@include flex(0,end,wrap);
+		align-content: flex-end;
+		padding: 10px 20px;
+		@include mq(){
+			padding: 10px 15px;
+		}
+		&-ttl{
+			width: 100%;
+			@include fts(18,24);
+			font-weight: 500;
+			position: relative;
+			padding: 0 0 0 45px;
+			img{
+				width: 35px;
+				height: 35px;
+				@include ob;
+				border-radius: 4px;
+				position: absolute;
+				left: 0;
+				@include v-align;
+			}
+		}
+	}
+	&__option{
+		@include flex(between,center,wrap);
+		width: 100%;
+		padding: 15px 0 0;
+		.c-btn__01{
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+	&__sns{
+		@include flex(0,center,wrap);
+		background: rgba(white,0.1);
+		border-radius: 20px;
+		li{
+			padding: 5px 10px;
+			img{
+				width: 24px;
+			}
+		}
+	}
+}

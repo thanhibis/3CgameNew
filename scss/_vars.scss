@@ -145,16 +145,16 @@ $breakpoint-md: 768px !default;
 $breakpoint-lg: 990px !default;
 
 $breakpoints: (
-		'xs': 'screen and (max-width: 374px)',
-		'sm': 'screen and (max-width: 640px)',
+		'xs': 'screen and (max-width: 380px)',
+		'sm': 'screen and (max-width: 750px)',
 		'md': 'screen and (max-width: 834px)',
 		'lg': 'screen and (max-width: 990px)',
 		'tb': 'screen and (max-width: 1024px)',
 		'xl': 'screen and (max-width: 1245px)',
 		'lp': 'screen and (max-width: 1440px)',
 		'mac': 'screen and (max-width: 1770px)',
-		'xs-min': 'screen and (min-width: 375px)',
-		'sm-min': 'screen and (min-width: 641px)',
+		'xs-min': 'screen and (min-width: 381px)',
+		'sm-min': 'screen and (min-width: 751px)',
 		'md-min': 'screen and (min-width: 835px)',
 		'lg-min': 'screen and (min-width: 991px)',
 		'tb-min': 'screen and (min-width: 1025px)',

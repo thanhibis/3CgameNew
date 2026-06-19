@@ -29,6 +29,9 @@
 				@include mq(sm){
 					margin: 0 20px 0 0;
 				}
+				@include mq(xs){
+					margin: 0 12px 0 0;
+				}
 				&:last-child{
 					margin-right: 0;
 				}

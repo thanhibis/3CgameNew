@@ -103,3 +103,23 @@ jQuery(document).ready(function ($) {
     return false;
   });
 });
+var swiper4 = new Swiper(".mySwiper", {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  freeMode: true,
+  watchSlidesProgress: true
+});
+var swiper5 = new Swiper(".mySwiper2", {
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true
+  },
+  thumbs: {
+    swiper: swiper4
+  }
+});
