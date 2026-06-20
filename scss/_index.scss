@@ -228,6 +228,11 @@
 			display: block;
 			border-radius: 15px;
 			padding: 10px;
+			overflow: hidden;
+			&:hover{
+				opacity: 1;
+				color: $orange;
+			}
 		}
 		&-img{
 			position: relative;
@@ -248,6 +253,8 @@
 		}
 		&-ct{
 			padding: 20px;
+			position: relative;
+			z-index: 1;
 			@include mq(){
 				padding: 20px 10px;
 			}
@@ -271,6 +278,57 @@
 					@include font-size(17);
 				}
 			}
+			&-status{
+				display: inline-block;
+				border: 1px solid white;
+				margin-bottom: 15px;
+				@include font-size(14);
+				padding: 3px 15px;
+				border-radius: 20px;
+			}
+		}
+		&--page{
+			width: 50%;
+			@include mq(){
+				width: 100%;
+				margin-bottom: 30px;
+			}
+			.news-block__first{
+				&-box{
+					padding: 0;
+					position: relative;
+				}
+				&-img{
+					&:before{
+						display: none;
+					}
+					img{
+						position: relative;
+						height: 432px;
+					}
+					&:after{
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						top: 0;
+						background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45.64%, rgba(0, 0, 0, 0.5) 100%)
+					}
+				}
+				&-ct{
+					color: white;
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					z-index: 1;
+					padding: 5%;
+					&-ttl{
+						color: white;
+					}
+				}
+			}
 		}
 	}
 	&__list{
@@ -289,6 +347,10 @@
 				padding: 15px;
 				border-radius: 15px;
 				color: $basic;
+				&:hover{
+					opacity: 1;
+					color: $orange;
+				}
 			}
 		}
 		&-img{
@@ -314,6 +376,15 @@
 			padding: 0 0 0 15px;
 			@include fts(20,26);
 			font-weight: 500;
+			@include mq(){
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 3;
+				max-height: 77px;
+				margin-bottom: 0;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+			}
 		}
 	}
 }

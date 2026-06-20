@@ -7,7 +7,9 @@ $('.js-mobile').on('click', function(){
 $('.header-language span').on('click', function(){
   $(this).next("ul").slideToggle();
 });
-
+$('.news-show__option-fill span').on('click', function(){
+    $(this).next("ul").slideToggle();
+});
 
 const swiper = new Swiper(".mv-list", {
   loop: true,

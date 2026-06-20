@@ -111,27 +111,56 @@ Component
 		&--dark{
 			background: #454545;
 			padding: 10px 20px;
+			&:hover{
+				color: white;
+				background: $orange;
+			}
 		}
 	}
 }
 
-
-//fade up
-.js-scrollin {
-	opacity: 0;
-	-webkit-transform: translate(0, 70px);
-	-ms-transform: translate(0, 70px);
-	transform: translate(0, 70px);
-	&.active{
+.view-more{
+	display: inline-block;
+	position: relative;
+	@include font-size(16);
+	line-height: 1;
+	color: #454545;
+	padding: 0 25px 0 0;
+	&:after{
+		content: "";
+		width: 18px;
+		height: 8px;
+		background: url("../img/common/arrow-right02.png")no-repeat;
+		background-size: 100%;
+		position: absolute;
+		@include v-align;
+		right: 0;
+	}
+	&:hover{
 		opacity: 1;
-		-webkit-transform: translate(0, 0);
-		-ms-transform: translate(0, 0);
-		transform: translate(0, 0);
-		-webkit-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-		-o-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-		transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		&:after{
+			background: url("../img/common/arrow-right03.png")no-repeat;
+			background-size: 100%;
+		}
 	}
 }
-
+time{
+	display: inline-block;
+	position: relative;
+	padding: 0 0 0 25px;
+	@include font-size(16);
+	line-height: 1;
+	color: #454545;
+	&:before{
+		content: "";
+		width: 16px;
+		height: 16px;
+		background: url("../img/common/calendar.png")no-repeat;
+		background-size: 100%;
+		position: absolute;
+		@include v-align;
+		left: 0;
+	}
+}
 
 
