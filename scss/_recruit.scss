@@ -1,0 +1,279 @@
+@use "vars" as *;
+
+.sec-recruit{
+	padding: 0 0 100px;
+}
+.recruit-heading{
+	display: block;
+	margin-bottom: 40px;
+	font-weight: 500;
+	@include fts(40,48);
+	color: $orange;
+	@include mq(){
+		@include fts(32,40);
+	}
+	small{
+		display: block;
+		@include font-size(32);
+		color: #303030;
+		margin-bottom: 10px;
+		@include mq(){
+			@include font-size(24);
+		}
+	}
+}
+
+.recruit-item{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 15px;
+	margin-bottom: 40px;
+	@include mq(tb){
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	@include mq(){
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	@include mq(sm){
+		grid-template-columns: 1fr 1fr;
+	}
+	li{
+		a{
+			@include flex(0,center,wrap);
+			height: 76px;
+			border-radius: 4px;
+			background: white;
+			position: relative;
+			@include fts(24,32);
+			color: #454545;
+			font-weight: 500;
+			padding: 5px 5px 5px 65px;
+			filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.05));
+			@include mq(){
+				@include fts(16,24);
+			}
+			&.active,&:hover{
+				background: $orange;
+				color: white;
+				opacity: 1;
+				.img-01{
+					opacity: 0;
+					visibility: hidden;
+				}
+				.img-02{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+	&__icon{
+		display: block;
+		width: 48px;
+		position: absolute;
+		@include v-align;
+		left: 5px;
+		.img-02{
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+.recruit-list{
+	margin-bottom: 100px;
+	&__item{
+		margin-bottom: 30px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		a{
+			display: block;
+			position: relative;
+			background: white;
+			color: #8D8D8D;
+			border-radius: 15px;
+			padding: 30px;
+			&:hover{
+				opacity: 1;
+				color: $orange;
+				.recruit-list__ttl{
+					color: $orange;
+				}
+			}
+			p{
+				margin-bottom: 15px;
+			}
+			.c-al--r{
+				@include flex(end,0,wrap);
+				@include mq(){
+					display: none;
+				}
+			}
+		}
+	}
+	&__ttl{
+		display: block;
+		@include font-size(24);
+		line-height: 1.4;
+		font-weight: 500;
+		color: #303030;
+		margin-bottom: 15px;
+		text-align: left;
+	}
+	&__note{
+		@include flex(0,0,wrap);
+		span{
+			display: block;
+			position: relative;
+			padding: 0 0 0 23px;
+			margin: 0 30px 10px 0;
+			&:last-child{
+				margin-right: 0;
+			}
+			img{
+				display: block;
+				width: 16px;
+				position: absolute;
+				@include v-align;
+				left: 0;
+			}
+		}
+	}
+}
+
+.recruit-benefits{
+	margin: 0 -20px 50px;
+	.swiper-slide{
+		padding: 0 20px;
+	}
+	&__block{
+		@include flex(0,0,wrap);
+		&-img{
+			width: 64px;
+		}
+		&-ct{
+			width: calc(100% - 64px);
+			padding: 0 0 0 15px;
+			&-ttl{
+				display: block;
+				font-weight: 500;
+				@include font-size(24);
+				margin-bottom: 15px;
+			}
+		}
+	}
+	&__pagination{
+		@include flex(end,center,wrap);
+		padding: 0 20px 0 0;
+		@include mq(){
+			margin-top: 30px;
+		}
+		span{
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: #D9D9D9;
+			margin: 0 7px !important;
+		}
+		.swiper-pagination-bullet-active{
+			background: $orange;
+		}
+	}
+}
+
+.recruit-view{
+	@include flex(0,center,wrap);
+	background: $orange;
+	border-radius: 20px;
+	overflow: hidden;
+	margin-bottom: 70px;
+	@include mq(){
+		margin: 0 -15px 50px 0;
+		border-radius: 20px 0 0 20px;
+	}
+	&__img{
+		width: 50%;
+		@include mq(){
+			width: 100%;
+		}
+		img{
+			width: 100%;
+			height: 600px;
+			@include ob;
+			@include mq(){
+				height: auto;
+				border-radius: 20px 0 0 20px;
+			}
+		}
+	}
+	&__ct{
+		width: 50%;
+		color: white;
+		padding: 30px;
+		@include mq(){
+			width: 100%;
+		}
+		&-ttl{
+			display: block;
+			@include fts(32,40);
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.recruit-support{
+	@include flex(between,center,wrap);
+	.recruit-heading{
+		@include mq(md-min){
+			width: 50%;
+			margin-bottom: 0;
+		}
+		@include mq(){
+			width: 100%;
+		}
+	}
+	&__list{
+		width: 50%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap:  30px;
+		max-width: 320px;
+		@include mq(){
+			width: 100%;
+			margin: 0 auto;
+		}
+		li{
+			a{
+				display: block;
+				@include font-size(18);
+				text-align: center;
+				color: black;
+				&:hover{
+					opacity: 1;
+					color: $orange;
+					.img-01{
+						opacity: 0;
+					}
+					.img-02{
+						opacity: 1;
+					}
+				}
+			}
+		}
+		&-icon{
+			width: 96px;
+			position: relative;
+			margin: 0 auto 10px;
+			.img-02{
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+			}
+		}
+	}
+}

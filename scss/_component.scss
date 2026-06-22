@@ -145,6 +145,28 @@ Component
 		}
 	}
 }
+.view-more02{
+	width: 200px;
+	height: 45px;
+	border-radius: 45px;
+	@include flex(0,center,wrap);
+	color: $orange;
+	border: 1px solid $orange;
+	@include font-size(14);
+	padding: 10px 20px;
+	position: relative;
+	&:after{
+		content: "";
+		width: 28px;
+		height: 8px;
+		background: url("../img/common/arrow-right03.png")no-repeat;
+		background-size: 100%;
+		position: absolute;
+		@include v-align;
+		right: 20px;
+	}
+}
+
 time{
 	display: inline-block;
 	position: relative;

@@ -84,6 +84,24 @@ var swiper3 = new Swiper(".support-list", {
     }
   }
 });
+var swiper4 = new Swiper(".recruit-benefits", {
+  slidesPerView: 1,
+  freeMode: true,
+  loop: true,
+  pagination: {
+    el: ".recruit-benefits__pagination",
+    clickable: true
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  breakpoints: {
+    700: {
+      slidesPerView: 2
+    }
+  }
+});
 
 //backtop
 jQuery(document).ready(function ($) {
