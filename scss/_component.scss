@@ -60,6 +60,7 @@ Component
 .c-txt{
 	&__basic{
 		@include fts(16,24);
+		text-align: justify;
 	}
 }
 

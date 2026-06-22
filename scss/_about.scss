@@ -1,0 +1,190 @@
+@use "vars" as *;
+#page-about{
+	padding-top: 93px;
+	@include mq(tb){
+		padding-top: 90px;
+	}
+}
+.about-mv{
+	margin-bottom: 50px;
+}
+.about-block{
+	@include flex(0,center,wrap);
+	&__img{
+		width: 50%;
+		@include mq(){
+			width: 100%;
+			margin-bottom: 30px;
+		}
+		img{
+			width: 100%;
+			height: auto;
+		}
+		iframe{
+			width: 100%;
+			height: 337px;
+			@include mq(){
+				height: 52vw;
+			}
+		}
+	}
+	&__ct{
+		width: 50%;
+		padding: 0 0 0 5%;
+		@include mq(){
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
+.about-show{
+	position: relative;
+	background: white;
+	margin: 200px 0 230px;
+	@include mq(){
+		margin: 100px 0;
+		padding: 50px 0;
+	}
+	&:before,&:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 185px;
+		@include mq(){
+			height: 80px;
+		}
+		@include mq(sm){
+			height: 40px;
+		}
+	}
+	&:before{
+		background: url("../img/about/bf.png")no-repeat;
+		background-size: cover;
+		background-position: top center;
+		bottom: calc(100% - 1px);
+		@include mq(){
+			background-size: 100% 100%;
+		}
+	}
+	&:after{
+		background: url("../img/about/af.png")no-repeat;
+		background-size: cover;
+		background-position: bottom center;
+		top: calc(100% - 1px);
+		@include mq(){
+			background-size: 100% 100%;
+		}
+	}
+}
+.about-heading{
+	&__item{
+		@include flex(0,center,wrap);
+		margin-bottom: 100px;
+		@include mq(){
+			margin-bottom: 50px;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+		@include mq(md-min){
+			&:nth-child(even){
+				.about-heading{
+					&__img{
+						order: 1;
+					}
+					&__ct{
+						order: 2;
+						padding: 0 0 0 10%;
+					}
+				}
+			}
+		}
+	}
+	&__img{
+		width: 50%;
+		@include mq(){
+			width: 100%;
+			order: 1;
+			margin-bottom: 20px;
+		}
+		img{
+			width: 100%;
+		}
+	}
+	&__ct{
+		width: 50%;
+		padding: 0 10% 0 0;
+		@include mq(){
+			width: 100%;
+			padding: 0;
+			order: 2;
+		}
+		.about-ttl{
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.about-ttl{
+	display: block;
+	color: $orange;
+	@include font-size(48);
+	font-weight: 500;
+	margin-bottom: 30px;
+	@include mq(){
+		@include font-size(30);
+		text-align: center;
+	}
+}
+
+.about-list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 30px;
+	@include mq(){
+		grid-template-columns: 1fr;
+	}
+	&__item{
+		background: white;
+		border-radius: 36px;
+		padding: 20px 20px 40px;
+	}
+	&__img{
+		width: 96px;
+		display: block;
+		margin: 0 auto 20px;
+	}
+	&__ct{
+		&-ttl{
+			display: block;
+			text-align: center;
+			color: $orange;
+			@include font-size(24);
+			font-weight: 500;
+			margin-bottom: 15px;
+			@include mq(){
+				@include font-size(20);
+			}
+		}
+	}
+}
+
+.about-note{
+	background: url("../img/about/bg-02.png")no-repeat;
+	background-size: cover;
+	background-position: top center;
+	padding: 230px 0 100px;
+	text-align: center;
+	color: $orange;
+	@include fts(32,40);
+	font-weight: 500;
+	@include mq(){
+		@include font-size(18);
+		padding: 170px 0 60px;
+	}
+	&__ct{
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+}

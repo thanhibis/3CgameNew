@@ -331,11 +331,14 @@
 			}
 		}
 	}
-	&__list{
+	.news-block__list{
 		width: 48%;
 		@include mq(){
 			width: 100%;
 		}
+	}
+	&__list{
+
 		&-item{
 			margin-bottom: 22px;
 			&:last-child{
