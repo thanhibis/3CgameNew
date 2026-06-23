@@ -1,0 +1,70 @@
+@use "vars" as *;
+
+.sec-contact{
+	padding: 0 0 100px;
+
+}
+.contact-block{
+	@include flex(between,0,wrap);
+	margin-bottom: 100px;
+	&__note{
+		width: 48%;
+		@include fts(20,28);
+		small{
+			display: block;
+			@include fts(14,20);
+		}
+		&-ttl{
+			display: block;
+			@include fts(32,40);
+			margin-bottom: 30px;
+		}
+		a{
+			display: block;
+			font-weight: 500;
+			margin-bottom: 30px;
+			color: $basic;
+			small{
+				display: block;
+				font-weight: 400;
+				@include font-size(12);
+			}
+		}
+		p{
+			margin-bottom: 30px;
+		}
+		&-sns{
+			@include flex(0,0,wrap);
+			li{
+				margin: 0 20px 10px 0;
+				a{
+					display: block;
+					img{
+						width: 32px;
+					}
+				}
+			}
+		}
+	}
+	&__form{
+		width: 50%;
+		p{
+			margin-bottom: 30px;
+		}
+		dl{
+			margin-bottom: 30px;
+			dt{
+				margin-bottom: 10px;
+			}
+			dd{
+
+			}
+		}
+		&-sub{
+			.c-btn__02{
+				width: 100%;
+				display: block;
+			}
+		}
+	}
+}

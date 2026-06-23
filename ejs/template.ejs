@@ -16,9 +16,7 @@
 <body>
 
 	<%- include('common/_header'); %>
-	<main id="page-<%= pageData.template %>" class="wrapper">
-		<%- include(pageData.template, {datalabel:'data'}) %>
-	</main>
+	<%- include(pageData.template, {datalabel:'data'}) %>
 	<%- include('common/_footer'); %>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

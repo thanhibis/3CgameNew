@@ -1,0 +1,43 @@
+@use "vars" as *;
+
+.sec-company{
+	padding: 0 0 100px;
+}
+.company-note{
+	background: white;
+	padding: 30px 5%;
+	border-radius: 20px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+	@include mq(){
+		padding: 30px 15px;
+	}
+	h2{
+		@include fts(20,26);
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+	p{
+		margin-bottom: 20px;
+	}
+	a{
+		color: $basic;
+	}
+	ul{
+		margin-bottom: 20px;
+		li{
+			position: relative;
+			padding: 0 0 0 10px;
+			&:before{
+				content: "";
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				position: absolute;
+				top: 10px;
+				left: 0;
+				background: $basic;
+			}
+		}
+	}
+}

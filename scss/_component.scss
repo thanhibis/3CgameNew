@@ -8,6 +8,9 @@
 	&--black{
 		color: black !important;
 	}
+	&--orange{
+		color: $orange !important;
+	}
 }
 
 
@@ -96,7 +99,13 @@ Component
 			color: $orange;
 		}
 	}
-
+	&__02{
+		display: block;
+		@include font-size(32);
+		line-height: 1.4;
+		font-weight: 500;
+		margin-bottom: 30px;
+	}
 }
 
 //btn
@@ -116,6 +125,23 @@ Component
 				color: white;
 				background: $orange;
 			}
+		}
+	}
+	&__02{
+		display: inline-block;
+		line-height: 1;
+		color: white;
+		background: $orange;
+		border-radius: 5px;
+		@include font-size(24);
+		padding: 15px 30px;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		@include smooth-transition;
+		text-align: center;
+		&:hover{
+			opacity: 0.7;
 		}
 	}
 }

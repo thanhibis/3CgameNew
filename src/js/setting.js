@@ -152,3 +152,35 @@ var swiper5 = new Swiper(".mySwiper2", {
         swiper: swiper4,
     },
 });
+
+if ($("#uploadBox").length > 0) {
+    const uploadBox = document.getElementById("uploadBox");
+    const fileInput = document.getElementById("fileInput");
+    const uploadText = document.getElementById("uploadText");
+    
+    uploadBox.addEventListener("click", () => {
+        fileInput.click();
+    });
+    
+    fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        
+        if (file) {
+            uploadText.textContent = file.name;
+            console.log(file);
+        }
+    });
+    
+}
+
+
+
+jQuery('.open-popup').click(function(e) {
+    $("html").addClass("js-locked");
+    $(".popup").addClass("active");
+    e.preventDefault();
+});
+$('.close-popup').on('click', function(){
+    $("html").removeClass("js-locked");
+    $(".popup").removeClass("active");
+});
