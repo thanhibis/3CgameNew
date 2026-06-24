@@ -1,0 +1,114 @@
+@use 'vars' as *;
+
+.card-game{
+    padding: 0 0 64px;
+    @include mq{
+        padding-bottom: 50px
+    }
+}
+
+.game-title{
+    @include font-size(32);
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 36px;
+    @include mq{
+        @include font-size(26);
+        margin-bottom: 20px;
+    }
+}
+
+.game-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    @include mq{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 500px){
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    &__item{
+        a{
+            display: block;
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            @include mq{
+                border-radius: 10px;
+            }
+            @include p-after(100%, 100%){
+                background: linear-gradient(270deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.8) 100%);
+                top: 0;
+                left: 0;
+                z-index: 2;
+            }
+        }
+    }
+    &__wp{
+        position: absolute;
+        bottom: 24px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 3;
+    }
+    &__title{
+        color: #fff;
+        font-weight: 500;
+        @include fts(18, 24);
+        @include mq{
+            @include font-size(16);
+        }
+    }
+    &__img-thumb{
+        width: 48px;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 0 auto 10px;
+    }
+}
+
+
+.sec-benefit{
+    padding-bottom: 64px;
+    .c-ttl__01{
+        margin-bottom: 36px;
+        &:after{
+            display: none;
+        }
+    }
+}
+
+.benefit-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    @include mq(sm){
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    &__item{
+        background: #fff;
+        padding: 40px 15px;
+        @include mq{
+            padding: 20px 0;
+        }
+    }
+    &__icon{
+        width: 64px;
+        margin: 0 auto 25px;
+        @include mq{
+            width: 50px;
+        }
+    }
+    &__caption{
+        @include fts(18, 24);
+        text-align: center;
+        font-weight: 300;
+        @include mq{
+            @include font-size(16);
+        }
+    }
+}
