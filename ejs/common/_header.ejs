@@ -4,7 +4,7 @@
 			<ul class="header-top__item">
 				<li><a href=""><img src="<%= RELATIVE_PATH %>img/common/icon-01.png" alt="Tài khoản">Tài khoản</a></li>
 				<li><a href=""><img src="<%= RELATIVE_PATH %>img/common/icon-02.png" alt="Trung tâm nạp">Trung tâm nạp</a></li>
-				<li><a href=""><img src="<%= RELATIVE_PATH %>img/common/icon-03.png" alt="Hỗ trợ khách hàng">Hỗ trợ khách hàng</a></li>
+				<li><a href="" class="<% if(pageData.parentId1 == 'support'){ %> active <% } %>"><img src="<%= RELATIVE_PATH %>img/common/icon-03.png" alt="Hỗ trợ khách hàng">Hỗ trợ khách hàng</a></li>
 			</ul>
 			<a href="tel:19001168" class="pc-tb"><img src="<%= RELATIVE_PATH %>img/common/icon-04.png" alt="19001168">19001168</a>
 		</div>
@@ -14,32 +14,79 @@
 			<a href="<%= RELATIVE_PATH %>" class="header-logo">
 				<img src="<%= RELATIVE_PATH %>img/common/logo.png" alt="3CGAME">
 			</a>
-			<nav class="header-nav">
-				<ul class="header-nav__menu">
-					<li class="header-nav__menu-item">
-						<a href="">Về chúng tôi</a>
-					</li>
-					<li class="header-nav__menu-item">
-						<a href="">Trò chơi</a>
-					</li>
-					<li class="header-nav__menu-item">
-						<a href="">Tin tức</a>
-					</li>
-					<li class="header-nav__menu-item">
-						<a href="">Tuyển dụng</a>
-					</li>
-					<li class="header-nav__menu-item">
-						<a href="">Liên hệ</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="header-language">
-				<span>VI</span>
-				<ul>
-					<li><a href="">VI</a></li>
-					<li><a href="">EN</a></li>
-				</ul>
-			</div>
+			<% if(pageData.parentId1 == "support"){ %>
+				<nav class="header-nav">
+					<ul class="header-nav__menu">
+						<li class="header-nav__menu-item">
+							<a href="">Tạo yêu cầu hỗ trợ</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">FAQs</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">Yêu cầu hỗ trợ của bạn</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header-account c-txt__basic">
+					<div class="header-account__img">
+						<img src="<%= RELATIVE_PATH %>img/common/avatar.png" alt="3CGAME">
+					</div>
+					<div class="header-account__content">
+						<div class="header-account__content-heading">
+							<div class="header-account__content-heading-img">
+								<img src="<%= RELATIVE_PATH %>img/common/avatar.png" alt="3CGAME">
+							</div>
+							<div class="header-account__content-heading-name">
+								<p>
+									Nam Duong
+								</p>
+								<p>
+									#5438951
+								</p>
+							</div>
+						</div>
+						<a href="" class="header-account__content-logout"><img src="<%= RELATIVE_PATH %>img/common/logout.png" alt="3CGAME">Đăng xuất</a>
+					</div>
+				</div>
+				<div class="header-language">
+					<span>VI</span>
+					<ul>
+						<li><a href="">Tiếng Việt</a></li>
+						<li><a href="">English</a></li>
+						<li><a href="">中国人</a></li>
+					</ul>
+				</div>
+			<% }
+			else { %>
+				<nav class="header-nav">
+					<ul class="header-nav__menu">
+						<li class="header-nav__menu-item">
+							<a href="">Về chúng tôi</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">Trò chơi</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">Tin tức</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">Tuyển dụng</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">Liên hệ</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header-language">
+					<span>VI</span>
+					<ul>
+						<li><a href="">Tiếng Việt</a></li>
+						<li><a href="">English</a></li>
+						<li><a href="">中国人</a></li>
+					</ul>
+				</div>
+			<% } %>
 		</div>
 		<span class="js-mobile">
 			<span></span>
