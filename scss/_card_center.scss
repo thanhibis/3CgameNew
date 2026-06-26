@@ -112,3 +112,103 @@
         }
     }
 }
+
+
+// @page xu_in_gae
+#page-card_center_xu_in_game{
+    padding-top: 94px;
+}
+.xu-in-game{
+    padding: 64px 0 100px;
+    background: url(../img/card_center/xu_in_game/bg-page.jpg) no-repeat top center/cover;
+}
+
+.xu-block{
+    max-width: 672px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 10px;
+    padding: 36px 36px;
+    background: #fff;
+
+    &__balance{
+        background: #f2f2f2;
+        padding: 7px 13px;
+        @include font-size(16);
+        font-weight: 300;
+        @include flex(0, center);
+        gap: 0 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        .txt-xu{
+            font-weight: 500;
+            font-size: 2.4rem;
+            gap: 0 4px;
+            @include flex(0, center);
+        }
+    }
+
+    &__ttl{
+        @include font-size(20);
+        font-weight: 500;
+        margin-bottom: 22px;
+    }
+
+    &__option{
+        margin-bottom: 24px;
+        position: relative;
+        @include p-after(13px, 8px){
+            background: url(../img/card_center/xu_in_game/arr-select.png) no-repeat center/100%;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .form-control{
+            padding: 5px 24px;
+            cursor: pointer;
+        }
+    }
+
+    &__conversion{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 24px;
+        @include font-size(18);
+        font-weight: 300;
+        margin-bottom: 26px;
+        &-item{
+            position: relative;
+            dt{
+                margin-bottom: 13px;
+            }
+            dd{
+                position: relative;
+            }
+
+            .form-control{
+                font-weight: 500;
+            }
+
+            .input-label{
+                position: absolute;
+                top: 0;
+                right: 10px;
+                height: 48px;
+                @include flex(0, center);
+                @include font-size(14);
+                gap: 0 16px;
+            }
+        }
+    }
+
+    &__note{
+        @include font-size(16);
+        background: #F5CCCC;
+        border-radius: 8px;
+        padding: 16px;
+        img{
+            margin-right: 10px;
+        }
+    }
+}
