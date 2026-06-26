@@ -1,63 +1,63 @@
 <main id="page-<%= pageData.template %>">
-    <section class="xu-in-game">
-        <div class="inner">
-            <div class="xu-block">
-                <div class="xu-block__balance">
-                    Số dư ví: <span class="txt-xu">3.000 <img src="<%= RELATIVE_PATH %>img/card_center/xu_in_game/icon-3ccoin.png" alt="" width="24"></span>
-                </div>
-                <h2 class="xu-block__ttl">Chuyển Xu vào game</h2>
-                <div class="xu-block__option">
-                    <select name="game" id="game" class="form-control">
-                        <option value="">Chọn game</option>
-                    </select>
-                </div>
-                <div class="xu-block__option">
-                    <select name="server" id="server" class="form-control">
-                        <option value="">Chọn game</option>
-                    </select>
-                </div>
-                <div class="xu-block__conversion">
-                    <dl class="xu-block__conversion-item">
-                        <dt>3C Coins cần chuyển</dt>
-                        <dd class="input-group">
-                            <input type="text" class="form-control" value="1000">
-                            <div class="input-label">3C COIN <img src="<%= RELATIVE_PATH %>img/card_center/xu_in_game/icon-3ccoin.png" alt="" width="24"></div>
-                        </dd>
-                    </dl>
-                    <dl class="xu-block__conversion-item">
-                        <dt>Xu game nhận được</dt>
-                        <dd class="input-group">
-                            <input type="text" class="form-control" value="1000">
-                            <div class="input-label">XU GAME</div>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="xu-block__note">
-                    <img src="<%= RELATIVE_PATH %>img/card_center/xu_in_game/icon-note.png" alt="3CGAME" width="20">
-                    Tỉ lệ quy đổi: 1 3CCoin = 10 xu game
-                </div>
-                <button class="c-btn__02 xu-block__btn open-popup" type="submit">XÁC NHẬN</button>
-            </div>
-        </div>
-    </section>
-    <div class="popup">
+	<section class="xu-in-game">
+		<div class="inner">
+			<div class="xu-block">
+				<div class="xu-block__balance">
+					Số dư ví: <span class="txt-xu">3.000 <img src="<%= RELATIVE_PATH %>img/card_center/xu_in_game/icon-3ccoin.png" alt="" width="24"></span>
+				</div>
+				<h2 class="xu-block__ttl">Chuyển Xu vào game</h2>
+				<div class="xu-block__option">
+					<select name="game" id="game" class="form-control">
+						<option value="">Chọn game</option>
+					</select>
+				</div>
+				<div class="xu-block__option">
+					<select name="server" id="server" class="form-control">
+						<option value="">Chọn game</option>
+					</select>
+				</div>
+				<div class="xu-block__conversion">
+					<dl class="xu-block__conversion-item">
+						<dt>3C Coins cần chuyển</dt>
+						<dd class="input-group">
+							<input type="text" class="form-control" value="1000">
+							<div class="input-label">3C COIN <img src="<%= RELATIVE_PATH %>img/card_center/xu_in_game/icon-3ccoin.png" alt="" width="24"></div>
+						</dd>
+					</dl>
+					<dl class="xu-block__conversion-item">
+						<dt>Xu game nhận được</dt>
+						<dd class="input-group">
+							<input type="text" class="form-control" value="1000">
+							<div class="input-label">XU GAME</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="xu-block__note">
+					<img src="<%= RELATIVE_PATH %>img/card_center/xu_in_game/icon-note.png" alt="3CGAME" width="20">
+					Tỉ lệ quy đổi: 1 3CCoin = 10 xu game
+				</div>
+				<button class="c-btn__02 xu-block__btn open-popup" type="submit">XÁC NHẬN</button>
+			</div>
+		</div>
+	</section>
+	<div class="popup">
 		<div class="popup-bg close-popup"></div>
 		<div class="popup-ct c-txt__basic">
 			<div class="popup-ct__close close-popup">
 				<img src="<%= RELATIVE_PATH %>img/common/close.png" alt="close">
 			</div>
-            <div class="icon-success">
-                <img src="<%= RELATIVE_PATH %>img/common/icon-success.png" alt="Success">
-            </div>
+			<div class="icon-success">
+				<img src="<%= RELATIVE_PATH %>img/common/icon-success.png" alt="Success">
+			</div>
 			<h3 class="popup-ct__ttl">Chuyển xu thành công</h3>
 			<div class="popup-content">
-                <p>Bạn đã chuyển thành công 1.000 3C Coin vào game [Tên game] - server [Tên server].</p>
-                <p class="txt-result"> 10.000 Xu Game</p>
-            </div>
-            <div class="group-control">
-                <a href="#" class="group-control__btn">Đóng</a>
-                <a href="#" class="group-control__btn">Lịch sử giao dịch</a>
-            </div>
+				<p>Bạn đã chuyển thành công 1.000 3C Coin vào game [Tên game] - server [Tên server].</p>
+				<p class="txt-result"> 10.000 Xu Game</p>
+			</div>
+			<div class="group-control">
+				<a href="#" class="group-control__btn">Đóng</a>
+				<a href="#" class="group-control__btn">Lịch sử giao dịch</a>
+			</div>
 		</div>
 	</div>
 </main>

@@ -766,3 +766,85 @@ $color-pending: #f97316;
 	color: #8d8d8d;
 	margin-top: 16px;
 }
+
+.sec-transaction{
+	padding-bottom: 107px;
+	@include mq{
+		padding-bottom: 50px;
+	}
+}
+
+.transaction-block{
+	max-width: 607px;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 8px;
+	padding: 36px 40px;
+	&__icon{
+		width: 96px;
+		margin: 0 auto 16px;
+		@include mq{
+			width: 60px;
+		}
+	}
+	&__ttl{
+		text-align: center;
+		@include font-size(24);
+		font-weight: 500;
+		margin-bottom: 15px;
+		@include mq{
+			@include font-size(20);
+		}
+	}
+	&__desc{
+		text-align: center;
+		margin-bottom: 28px;
+		span{
+			display: block;
+			color: $orange;
+			@include font-size(24);
+			font-weight: 500;
+			@include mq{
+				@include font-size(20);
+			}
+		}
+	}
+	&__detail{
+		background: #F2F2F2;
+		border-radius: 8px;
+		padding: 16px;
+		@include flex(0,0,wrap);
+		margin-bottom: 28px;
+		dt{
+			@include font-size(14);
+			color: #8D8D8D;
+			@include mq{
+
+			}
+		}
+		dd{
+			@include font-size(18);
+		}
+		&-left{
+			width: 100px;
+			@include mq{
+				margin-bottom: 20px;
+			}
+		}
+		&-right{
+			width: calc(100% - 100px);
+			padding-left: 96px;
+			@include mq{
+				padding-left: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	.group-control{
+		@media screen and (max-width: 550px){
+			grid-template-columns: 1fr;
+			gap: 10px;
+		}
+	}
+}
