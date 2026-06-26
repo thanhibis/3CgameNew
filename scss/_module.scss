@@ -189,3 +189,39 @@ textarea.form-control{
 		padding: 10px;
 	}
 }
+
+.contact-inc{
+	background: url("../img/common/contact-bg.png")no-repeat;
+	background-size: cover;
+	background-position: top center;
+	padding: 230px 0 100px;
+	.inner{
+		position: relative;
+		&:after{
+			content: "";
+			width: 156px;
+			height: 138px;
+			background: url(../img/common/message.png) no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: -310px;
+			right: -50px;
+		}
+	}
+	p{
+		margin-bottom: 20px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__tel{
+		display: inline-block;
+		color: $orange;
+		@include font-size(32);
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+	&__note{
+		@include fts(18,24);
+	}
+}

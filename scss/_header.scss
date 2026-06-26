@@ -19,39 +19,34 @@
 	}
 	.header-top{
 		background: $green;
-		padding: 10px 0;
 		position: relative;
 		z-index: 1;
 		ul{
 			@include flex(0,0,wrap);
-			li{
-				margin: 0 20px 0 0;
-				@include mq(sm){
-					margin: 0 20px 0 0;
-				}
-				@include mq(xs){
-					margin: 0 12px 0 0;
-				}
-				&:last-child{
-					margin-right: 0;
-				}
-			}
+
 		}
 		a{
 			display: block;
 			position: relative;
-			padding: 0 0 0 23px;
+			padding: 10px 10px 10px 28px;
 			color: white;
 			@include font-size(14);
 			@include mq(sm){
-				padding: 0 0 0 20px;
+				padding: 10px 5px 10px 23px;
 			}
 			img{
 				display: block;
 				width: 16px;
 				position: absolute;
 				@include v-align;
-				left: 0;
+				left: 7px;
+				@include mq(sm){
+					width: 14px;
+				}
+			}
+			&.active,&:hover{
+				background: #454545;
+				opacity: 1;
 			}
 		}
 	}
@@ -60,6 +55,7 @@
 		position: relative;
 		.inner{
 			align-items: center;
+			position: relative;
 			@include mq(tb){
 				justify-content: center;
 			}
@@ -161,16 +157,26 @@
 		ul{
 			position: absolute;
 			top: 100%;
-			left: 0;
 			right: 0;
 			background: white;
 			padding: 5px 0;
 			display: none;
+			min-width: 150px;
+			border: 1px solid #F4F4F4;
+			border-radius: 20px;
 			li{
+				border-bottom: 1px solid #F4F4F4;
+				&:last-child{
+					border-bottom: none;
+				}
 				a{
 					display: block;
 					color: $basic;
-					padding: 5px 0;
+					padding: 10px 0;
+					&:hover{
+						color: $orange;
+						opacity: 1;
+					}
 				}
 			}
 		}
@@ -248,5 +254,61 @@
 	touch-action: none;
 	body {
 		-webkit-overflow-scrolling: auto;
+	}
+}
+
+.header-account{
+	position: absolute;
+	@include v-align;
+	right: 115px;
+	a{
+		color: $basic;
+	}
+	&__img{
+		img{
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			@include ob;
+		}
+	}
+	&__content{
+		position: absolute;
+		top: 100%;
+		@include h-align;
+		width: 250px;
+		background: #FFFFFF;
+		border: 1px solid #F4F4F4;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+		border-radius: 15px;
+		padding: 20px 15px;
+		&-heading{
+			@include flex(0,center,wrap);
+			margin-bottom: 15px;
+			&-img{
+				width: 48px;
+				img{
+					width: 48px;
+					height: 48px;
+					@include ob;
+					border-radius: 50%;
+				}
+			}
+			&-name{
+				width: calc(100% - 48px);
+				padding: 0 0 0 10px;
+			}
+		}
+		&-logout{
+			display: block;
+			position: relative;
+			padding: 0 0 0 35px;
+			img{
+				position: absolute;
+				left: 0;
+				@include v-align;
+				width: 24px;
+			}
+		}
 	}
 }
