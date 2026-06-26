@@ -12,7 +12,7 @@ $('.header-language span').on('click', function () {
 $('.news-show__option-fill span').on('click', function () {
   $(this).next("ul").slideToggle();
 });
-const swiper = new Swiper(".mv-list", {
+var swiper = new Swiper(".mv-list", {
   loop: true,
   effect: "fade",
   fadeEffect: {
@@ -145,14 +145,14 @@ var swiper5 = new Swiper(".mySwiper2", {
   }
 });
 if ($("#uploadBox").length > 0) {
-  const uploadBox = document.getElementById("uploadBox");
-  const fileInput = document.getElementById("fileInput");
-  const uploadText = document.getElementById("uploadText");
-  uploadBox.addEventListener("click", () => {
+  var uploadBox = document.getElementById("uploadBox");
+  var fileInput = document.getElementById("fileInput");
+  var uploadText = document.getElementById("uploadText");
+  uploadBox.addEventListener("click", function () {
     fileInput.click();
   });
-  fileInput.addEventListener("change", e => {
-    const file = e.target.files[0];
+  fileInput.addEventListener("change", function (e) {
+    var file = e.target.files[0];
     if (file) {
       uploadText.textContent = file.name;
       console.log(file);
@@ -168,3 +168,34 @@ $('.close-popup').on('click', function () {
   $("html").removeClass("js-locked");
   $(".popup").removeClass("active");
 });
+var input = document.querySelector('#amount');
+input.addEventListener('input', function () {
+  // Chỉ giữ lại số
+  var value = this.value.replace(/\D/g, '');
+  if (!value) {
+    this.value = '';
+    return;
+  }
+
+  // Format theo VN
+  this.value = Number(value).toLocaleString('vi-VN');
+});
+var amountInput = document.querySelector('#amount-detail');
+var amountRadios = document.querySelectorAll('input[name="amount"]');
+function toggleAmountInput() {
+  var checked = document.querySelector('input[name="amount"]:checked');
+  console.log(checked);
+  if (checked.value === 'other') {
+    amountInput.style.display = 'block';
+  } else {
+    amountInput.style.display = 'none';
+  }
+}
+
+// Gán sự kiện cho tất cả radio
+amountRadios.forEach(function (radio) {
+  radio.addEventListener('change', toggleAmountInput);
+});
+
+// Chạy khi tải trang
+toggleAmountInput();

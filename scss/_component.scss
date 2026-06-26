@@ -106,6 +106,12 @@ Component
 		font-weight: 500;
 		margin-bottom: 30px;
 	}
+
+	&__03{
+		@include font-size(20);
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
 }
 
 //btn

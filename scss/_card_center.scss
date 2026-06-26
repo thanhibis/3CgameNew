@@ -1,478 +1,745 @@
 @use 'vars' as *;
 
-.card-game{
-    padding: 0 0 64px;
-    @include mq{
-        padding-bottom: 50px
-    }
+.card-game {
+	padding: 0 0 64px;
+
+	@include mq {
+		padding-bottom: 50px
+	}
 }
 
-.game-title{
-    @include font-size(32);
-    line-height: 1.5;
-    font-weight: 500;
-    margin-bottom: 36px;
-    @include mq{
-        @include font-size(26);
-        margin-bottom: 20px;
-    }
+.game-title {
+	@include font-size(32);
+	line-height: 1.5;
+	font-weight: 500;
+	margin-bottom: 36px;
+
+	@include mq {
+		@include font-size(26);
+		margin-bottom: 20px;
+	}
 }
 
-.game-list{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    @include mq{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    @media screen and (max-width: 500px){
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    &__item{
-        a{
-            display: block;
-            border-radius: 22px;
-            overflow: hidden;
-            position: relative;
-            @include mq{
-                border-radius: 10px;
-            }
-            @include p-after(100%, 100%){
-                background: linear-gradient(270deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.8) 100%);
-                top: 0;
-                left: 0;
-                z-index: 2;
-            }
-        }
-    }
-    &__wp{
-        position: absolute;
-        bottom: 24px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        z-index: 3;
-    }
-    &__title{
-        color: #fff;
-        font-weight: 500;
-        @include fts(18, 24);
-        @include mq{
-            @include font-size(16);
-        }
-    }
-    &__img-thumb{
-        width: 48px;
-        border-radius: 4px;
-        overflow: hidden;
-        margin: 0 auto 10px;
-    }
+.game-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+
+	@include mq {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media screen and (max-width: 500px) {
+		grid-template-columns: 1fr;
+		gap: 15px;
+	}
+
+	&__item {
+		a {
+			display: block;
+			border-radius: 22px;
+			overflow: hidden;
+			position: relative;
+
+			@include mq {
+				border-radius: 10px;
+			}
+
+			@include p-after(100%, 100%) {
+				background: linear-gradient(270deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.8) 100%);
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+		}
+	}
+
+	&__wp {
+		position: absolute;
+		bottom: 24px;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		z-index: 3;
+	}
+
+	&__title {
+		color: #fff;
+		font-weight: 500;
+		@include fts(18, 24);
+
+		@include mq {
+			@include font-size(16);
+		}
+	}
+
+	&__img-thumb {
+		width: 48px;
+		border-radius: 4px;
+		overflow: hidden;
+		margin: 0 auto 10px;
+	}
 }
 
 
-.sec-benefit{
-    padding-bottom: 64px;
-    .c-ttl__01{
-        margin-bottom: 36px;
-        &:after{
-            display: none;
-        }
-    }
+.sec-benefit {
+	padding-bottom: 64px;
+
+	.c-ttl__01 {
+		margin-bottom: 36px;
+
+		&:after {
+			display: none;
+		}
+	}
 }
 
-.benefit-list{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    @include mq(sm){
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    &__item{
-        background: #fff;
-        padding: 40px 15px;
-        @include mq{
-            padding: 20px 0;
-        }
-    }
-    &__icon{
-        width: 64px;
-        margin: 0 auto 25px;
-        @include mq{
-            width: 50px;
-        }
-    }
-    &__caption{
-        @include fts(18, 24);
-        text-align: center;
-        font-weight: 300;
-        @include mq{
-            @include font-size(16);
-        }
-    }
+.benefit-list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+
+	@include mq(sm) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+
+	&__item {
+		background: #fff;
+		padding: 40px 15px;
+
+		@include mq {
+			padding: 20px 0;
+		}
+	}
+
+	&__icon {
+		width: 64px;
+		margin: 0 auto 25px;
+
+		@include mq {
+			width: 50px;
+		}
+	}
+
+	&__caption {
+		@include fts(18, 24);
+		text-align: center;
+		font-weight: 300;
+
+		@include mq {
+			@include font-size(16);
+		}
+	}
 }
 
 
 // @page xu_in_gae
-#page-card_center_xu_in_game{
-    padding-top: 94px;
-}
-.xu-in-game{
-    padding: 64px 0 100px;
-    background: url(../img/card_center/xu_in_game/bg-page.jpg) no-repeat top center/cover;
-    @include mq{
-        padding: 50px 0;
-    }
+#page-card_center_xu_in_game,
+#page-card_center_top_up_game {
+	padding-top: 94px;
 }
 
-.top-up{
-    padding: 64px 0 100px;
-    background: url(../img/card_center/top_up_game/bg.jpg) no-repeat top center/cover;
-    @include mq{
-        padding: 50px 0;
-    }
+.xu-in-game {
+	padding: 64px 0 100px;
+	background: url(../img/card_center/xu_in_game/bg-page.jpg) no-repeat top center/cover;
+
+	@include mq {
+		padding: 50px 0;
+	}
 }
 
-.xu-block{
-    max-width: 672px;
-    margin: 0 auto;
-    width: 100%;
-    border-radius: 10px;
-    padding: 36px 36px;
-    background: #fff;
-    @include mq{
-        padding: 20px;
-    }
-    &__balance{
-        background: #f2f2f2;
-        padding: 7px 13px;
-        @include font-size(16);
-        font-weight: 300;
-        @include flex(0, center);
-        gap: 0 16px;
-        border-radius: 8px;
-        margin-bottom: 24px;
-        @include mq{
-            @include font-size(14);
-        }
-        .txt-xu{
-            font-weight: 500;
-            font-size: 2.4rem;
-            gap: 0 4px;
-            @include flex(0, center);
-            @include mq{
-                @include font-size(20);
-                img{
-                    width: 20px;
-                }
-            }
-        }
-    }
+.top-up {
+	padding: 64px 0 100px;
+	background: url(../img/card_center/top_up_game/bg.jpg) no-repeat top center/cover;
 
-    &__ttl{
-        @include font-size(20);
-        font-weight: 500;
-        margin-bottom: 22px;
-        @include mq{
-            @include font-size(18);
-            margin-bottom: 18px;
-        }
-    }
+	@include mq {
+		padding: 50px 0;
+	}
+}
 
-    &__option{
-        margin-bottom: 24px;
-        position: relative;
-        @include p-after(13px, 8px){
-            background: url(../img/card_center/xu_in_game/arr-select.png) no-repeat center/100%;
-            top: 50%;
-            right: 30px;
-            transform: translateY(-50%);
-            z-index: 2;
-        }
-        .form-control{
-            padding: 5px 24px;
-            cursor: pointer;
-        }
-    }
+.xu-block {
+	max-width: 672px;
+	margin: 0 auto;
+	width: 100%;
+	border-radius: 10px;
+	padding: 36px 36px;
+	background: #fff;
 
-    &__conversion{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px 24px;
-        @include font-size(18);
-        font-weight: 300;
-        margin-bottom: 26px;
-        &--ungrid{
-            display: block;
-            .xu-block__conversion-ttl{
-                margin-bottom: 16px;
-            }
-        }
-        @include mq(sm){
-            grid-template-columns: 1fr;
-            @include font-size(16);
-        }
-        &-item{
-            position: relative;
-            dt{
-                margin-bottom: 13px;
-            }
-            dd{
-                position: relative;
-            }
+	@include mq {
+		padding: 20px;
+	}
 
-            .form-control{
-                font-weight: 500;
-            }
+	&__balance {
+		background: #f2f2f2;
+		padding: 7px 13px;
+		@include font-size(16);
+		font-weight: 300;
+		@include flex(0, center);
+		gap: 0 16px;
+		border-radius: 8px;
+		margin-bottom: 24px;
 
-            .input-label{
-                position: absolute;
-                top: 0;
-                right: 10px;
-                height: 48px;
-                @include flex(0, center);
-                @include font-size(14);
-                gap: 0 16px;
-                @include mq{
-                    gap: 0 10px;
-                    @include font-size(12);
-                    img{
-                        width: 18px;
-                    }
-                }
-            }
-        }
+		@include mq {
+			@include font-size(14);
+		}
 
-        &-list{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0 24px;
-            li{
-                position: relative;
-            }
-            input{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-            }
-            input:checked + label{
-                border-color: $orange;
-            }
-        }
+		.txt-xu {
+			font-weight: 500;
+			font-size: 2.4rem;
+			gap: 0 4px;
+			@include flex(0, center);
 
-        &-input{
-            padding: 14px 20px;
-            border: 1px solid #d9d9d9;
-            background: #fff;
-            @include flex(0, center);
-            border-radius: 8px;
-        }
-        &-icon{
-            width: 36px;
-        }
-        &-info{
-            width: calc(100% - 36px);
-            padding-left: 12px;
-            @include font-size(12);
-            span{
-                display: block;
-                &:first-child{
-                    @include font-size(16);
-                    font-weight: 500;
-                }
-            }
-        }
-    }
+			@include mq {
+				@include font-size(20);
 
-    &__note{
-        @include font-size(16);
-        background: #F5CCCC;
-        border-radius: 8px;
-        padding: 16px;
-        color: #454545;
-        margin-bottom: 24px;
-        @include mq{
-            @include font-size(14);
-            padding: 10px;
-        }
-        img{
-            margin-right: 10px;
-            position: relative;
-            top: -2px;
-            @include mq{
-                margin-right: 5px;
-            }
-        }
-    }
+				img {
+					width: 20px;
+				}
+			}
+		}
+	}
 
-    &__btn{
-        margin: 0 auto;
-        display: block;
-        max-width: 250px;
-        font-weight: 500;
-    }
+	&__ttl {
+		@include font-size(20);
+		font-weight: 500;
+		margin-bottom: 22px;
+
+		@include mq {
+			@include font-size(18);
+			margin-bottom: 18px;
+		}
+	}
+
+	&__option {
+		margin-bottom: 24px;
+		position: relative;
+
+		@include p-after(13px, 8px) {
+			background: url(../img/card_center/xu_in_game/arr-select.png) no-repeat center/100%;
+			top: 50%;
+			right: 30px;
+			transform: translateY(-50%);
+			z-index: 2;
+		}
+
+		.form-control {
+			padding: 5px 24px;
+			cursor: pointer;
+		}
+	}
+
+	&__conversion {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 15px 24px;
+		@include font-size(18);
+		font-weight: 300;
+		margin-bottom: 26px;
+
+		&--ungrid {
+			display: block;
+
+			.xu-block__conversion-ttl {
+				margin-bottom: 16px;
+			}
+		}
+
+		@include mq(sm) {
+			grid-template-columns: 1fr;
+			@include font-size(16);
+		}
+
+		&-item {
+			position: relative;
+
+			dt {
+				margin-bottom: 13px;
+			}
+
+			dd {
+				position: relative;
+			}
+
+			.form-control {
+				font-weight: 500;
+			}
+
+			.input-label {
+				position: absolute;
+				top: 0;
+				right: 10px;
+				height: 48px;
+				@include flex(0, center);
+				@include font-size(14);
+				gap: 0 16px;
+
+				@include mq {
+					gap: 0 10px;
+					@include font-size(12);
+
+					img {
+						width: 18px;
+					}
+				}
+			}
+		}
+
+		&-list {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px 24px;
+
+			@include mq(sm) {
+				grid-template-columns: 1fr;
+			}
+
+			li {
+				position: relative;
+			}
+
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+			}
+
+			input:checked+label {
+				border-color: $orange;
+			}
+		}
+
+		&-input {
+			padding: 14px 20px;
+			border: 1px solid #d9d9d9;
+			background: #fff;
+			@include flex(0, center);
+			border-radius: 8px;
+		}
+
+		&-icon {
+			width: 36px;
+		}
+
+		&-info {
+			width: calc(100% - 36px);
+			padding-left: 12px;
+			@include font-size(12);
+
+			span {
+				display: block;
+
+				&:first-child {
+					@include font-size(16);
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	&__note {
+		@include font-size(16);
+		background: #F5CCCC;
+		border-radius: 8px;
+		padding: 16px;
+		color: #454545;
+		margin-bottom: 24px;
+
+		@include mq {
+			@include font-size(14);
+			padding: 10px;
+		}
+
+		img {
+			margin-right: 10px;
+			position: relative;
+			top: -2px;
+
+			@include mq {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&__btn {
+		margin: 0 auto;
+		display: block;
+		max-width: 250px;
+		font-weight: 500;
+	}
 
 
-    &__payment{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 26px;
-        .input-group{
-            position: relative;
-            input{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-                &:checked + label{
-                    background: #ccc;
-                }
-            }
-        }
-        &-icon{
-            width: 64px;
-        }
-        &-info{
-            width: calc(100% - 64px);
-            padding-left: 16px;
-            @include font-size(14);
-            font-weight: 300;
-            >span{
-                display: block;
-                &:first-child{
-                    @include font-size(20);
-                    font-weight: 500;
-                }
-                .c-ft--en{
-                    font-family: $font-kanit;
-                    font-weight: 400;
-                }
-            }
-        }
-        &-input{
-            @include flex(0, center);
-            padding: 6px;
-            border-radius: 16px;
-            background: #F5F5F5;
-        }
-    }
-    &__amount{
-        padding: 12px 24px;
-        border-left: 1px solid #F68F19;
-        background-color: #F5F5F5;
-        margin-bottom: 24px;
-        &-ttl{
-            @include font-size(16);
-            font-weight: 300;
-            margin-bottom: 10px;
-        }
+	&__payment {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+		margin-bottom: 26px;
 
-        &-radio{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px 24px;
-            li{
-                position: relative;
-            }
-            input{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-                z-index: 2;
-                &:checked + span{
-                    border-color: $orange;
-                }
-            }
-            span{
-                @include flex(0,center);
-                height: 36px;
-                border: 1px solid #d9d9d9;
-                background: #fff;
-                border-radius: 4px;
-                @include font-size(16);
-                font-weight: 300;
-                position: relative;
-                padding-left: 28px;
-                @include p-before(16px, 16px){
-                    background: url(../img/card_center/top_up_game/xu-black.png) no-repeat center/100%;
-                    top: calc(50% - 8px);
-                    left: 8px;
-                }
-            }
-        }
+		@include mq(sm) {
+			grid-template-columns: 1fr;
+		}
 
-        &-select{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px 24px;
-            .xu-block__option{
-                margin-bottom: 0;
-            }
-        }
-    }
+		.input-group {
+			position: relative;
 
-    &__privacy{
-        @include font-size(14);
-        font-weight: 300;
-        margin-bottom: 24px;
-        a{
-            text-decoration: underline;
-            color: #454545;
-        }
-    }
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+
+				&:checked+label {
+					background: #ccc;
+				}
+			}
+		}
+
+		&-icon {
+			width: 64px;
+		}
+
+		&-info {
+			width: calc(100% - 64px);
+			padding-left: 16px;
+			@include font-size(14);
+			font-weight: 300;
+
+			>span {
+				display: block;
+
+				&:first-child {
+					@include font-size(20);
+					font-weight: 500;
+
+					@include mq {
+						@include font-size(18);
+					}
+				}
+
+				.c-ft--en {
+					font-family: $font-kanit;
+					font-weight: 400;
+				}
+			}
+		}
+
+		&-input {
+			@include flex(0, center);
+			padding: 6px;
+			border-radius: 16px;
+			background: #F5F5F5;
+		}
+	}
+
+	&__amount {
+		padding: 12px 24px;
+		border-left: 1px solid #F68F19;
+		background-color: #F5F5F5;
+		margin-bottom: 24px;
+
+		@include mq {
+			padding: 12px 18px;
+		}
+
+		&-ttl {
+			@include font-size(16);
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+
+		&-radio {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 16px 24px;
+
+			@include mq {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			@include mq(sm) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			li {
+				position: relative;
+			}
+
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+				z-index: 2;
+
+				&:checked+span {
+					border-color: $orange;
+					background-color: $orange;
+				}
+			}
+
+			span {
+				@include flex(0, center);
+				height: 36px;
+				border: 1px solid #d9d9d9;
+				background: #fff;
+				border-radius: 4px;
+				@include font-size(16);
+				font-weight: 300;
+				position: relative;
+				padding-left: 28px;
+
+				@include p-before(16px, 16px) {
+					background: url(../img/card_center/top_up_game/xu-black.png) no-repeat center/100%;
+					top: calc(50% - 8px);
+					left: 8px;
+				}
+			}
+		}
+
+		&-select {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px 24px;
+
+			@include mq {
+				grid-template-columns: 1fr;
+			}
+
+			.xu-block__option {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__privacy {
+		@include font-size(14);
+		font-weight: 300;
+		margin-bottom: 24px;
+
+		a {
+			text-decoration: underline;
+			color: #454545;
+		}
+	}
 }
 
 
-.icon-success{
-    width: 96px;
-    margin: 0 auto;
-    @include mq{
-        width: 60px;
-    }
+.amount-detail {}
+
+
+.icon-success {
+	width: 96px;
+	margin: 0 auto;
+
+	@include mq {
+		width: 60px;
+	}
 }
 
-.popup-content{
-    max-width: 325px;
-    margin: 0 auto 16px;
-    text-align: center;
+.popup-content {
+	max-width: 325px;
+	margin: 0 auto 16px;
+	text-align: center;
 }
 
-.txt-result{
-    text-align: center;
-    @include font-size(24);
-    color: $orange;
-    font-weight: 500;
-    margin-bottom: 28px;
-    @include mq{
-        @include font-size(20);
-    }
+.txt-result {
+	text-align: center;
+	@include font-size(24);
+	color: $orange;
+	font-weight: 500;
+	margin-bottom: 28px;
+
+	@include mq {
+		@include font-size(20);
+	}
 }
 
-.group-control{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 24px;
-    &__btn{
-        height: 48px;
-        width: 100%;
-        @include flex(center, center);
-        color: #fff;
-        font-weight: 500;
-        background: #454545;
-        @include font-size(16);
-        border-radius: 4px;
-        &:nth-child(2){
-            background: $orange;
-        }
-    }
+.group-control {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0 24px;
+
+	&__btn {
+		height: 48px;
+		width: 100%;
+		@include flex(center, center);
+		color: #fff;
+		font-weight: 500;
+		background: #454545;
+		@include font-size(16);
+		border-radius: 4px;
+
+		&:nth-child(2) {
+			background: $orange;
+		}
+	}
+}
+
+.amount-detail {
+	margin-bottom: 26px;
+
+	&__input {
+		position: relative;
+		@include font-size(20);
+		font-weight: 500;
+
+		.form-control {
+			text-align: right;
+			padding-right: 65px;
+			@include font-size(20);
+		}
+
+		&-vnd {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			height: 48px;
+			display: inline-flex;
+			align-items: center;
+		}
+	}
+}
+
+
+// @page: history
+// ============================================================
+//  Variables
+// ============================================================
+$color-success: #22c55e;
+$color-cancelled: #ef4444;
+$color-pending: #f97316;
+// ============================================================
+//  Tabs
+// ============================================================
+
+.sec-history {
+	padding-bottom: 64px;
+}
+
+.history-tabs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	list-style: none;
+	margin: 0 0 24px;
+	padding: 0;
+	flex-wrap: wrap;
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		padding: 6px 18px;
+		border-radius: 18px;
+		font-size: 1.6rem;
+		font-weight: 300;
+		text-decoration: none;
+		border: 1px solid #D9D9D9;
+		background: #fff;
+		color: $basic;
+
+		&:hover {
+			border-color: $orange;
+		}
+	}
+
+	// ── modifier ─────────────────────────────────────────────
+	&__item--active &__link {
+		background: $orange;
+		color: #fff;
+		border-color: $orange;
+	}
+}
+
+// ============================================================
+//  Table
+// ============================================================
+.table-scroll{
+	overflow-x: auto;
+}
+.history-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 1.8rem;
+	@include mq{
+		@include font-size(16);
+	}
+	&__body{
+		tr{
+			background: #fff;
+			&:nth-child(even){
+				background: #f5f5f5;
+			}
+		}
+	}
+
+	// ── cells (th + td) ──────────────────────────────────────
+	&__cell {
+		padding: 17px 0;
+		font-size: 1.8rem;
+		text-align: left;
+		vertical-align: middle;
+		&:is(th) {
+			white-space: nowrap;
+			position: relative;
+			font-weight: 300;
+			@include p-before(10px, 10px){
+				display: inline-block;
+				border-radius: 50%;
+				background: $green;
+				margin-right: 6px;
+				vertical-align: middle;
+				position: relative;
+				top: -3px;
+			}
+		}
+		&--id       { width: 27%; padding-left: 60px; @include mq{padding-left: 15px;} }      // 324px
+		&--deposit  { width: 20%; }      // 240px
+		&--received { width: 20.58%; }   // 247px
+		&--status   { width: 18%; }      // 240px
+		&--time     { width: 15%; }      // 156px
+	}
+
+	// ── dot indicator in header ───────────────────────────────
+	
+
+	// ── status badge ─────────────────────────────────────────
+	&__status {
+		&--success {
+			color: $color-success;
+		}
+
+		&--cancelled {
+			color: $color-cancelled;
+		}
+
+		&--pending {
+			color: $color-pending;
+		}
+	}
+}
+
+// ============================================================
+//  Responsive
+// ============================================================
+@media (max-width: 768px) {
+	.history-table-wrap {
+		overflow-x: auto;
+		border-radius: 8px;
+	}
+
+	.history-table {
+		width: 750px;
+	}
+
+	.sec-history .inner {
+		padding: 0 16px;
+	}
 }

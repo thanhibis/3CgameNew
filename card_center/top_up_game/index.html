@@ -66,7 +66,7 @@
 			<section class="top-up">
 				<div class="inner">
 					<div class="xu-block">
-						<h2 class="xu-block__ttl">Chọn phương thức thanh toán</h2>
+						<h2 class="c-ttl__03 xu-block__ttl">Chọn phương thức thanh toán</h2>
 						<div class="xu-block__payment">
 							<div class="input-group">
 								<input type="radio" name="payment" value="vnpay" checked>
@@ -105,8 +105,9 @@
 								</label>
 							</div>
 						</div>
+						<h2 class="c-ttl__03">Số tiền</h2>
 						<div class="xu-block__amount">
-							<h3 class="xu-block__amount-ttl">Chọn nhanh số tiền</h3>
+							<h3 class="c-ttl__03 xu-block__amount-ttl">Chọn nhanh số tiền</h3>
 							<ul class="xu-block__amount-radio">
 								<li>
 									<label>
@@ -158,10 +159,15 @@
 								</li>
 							</ul>
 						</div>
-						<div class="amount-detail">
+						<div class="amount-detail" id="amount-detail" style="display: none;">
+							<h3 class="c-ttl__03 amount-detail__ttl">Số tiền</h3>
+							<div class="amount-detail__input">
+								<input type="text" class="form-control" inputmode="numeric" id="amount">
+								<span class="amount-detail__input-vnd"> VNĐ </span>
+							</div>
 						</div>
 						<div class="xu-block__conversion xu-block__conversion--ungrid">
-							<h4 class="xu-block__conversion-ttl">Chọn hình thức nạp</h4>
+							<h4 class="c-ttl__03 xu-block__conversion-ttl">Chọn hình thức nạp</h4>
 							<ul class="xu-block__conversion-list">
 								<li>
 									<input type="radio" name="conversion" value="game" checked>

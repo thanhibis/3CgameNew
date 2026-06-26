@@ -1,0 +1,76 @@
+<main id="page-<%= pageData.template %>">
+    <section class="sec-history">
+        <div class="inner">
+            <h1 class="c-ttl__02">Lịch sử giao dịch</h1>
+            <ul class="history-tabs">
+                <li class="history-tabs__item history-tabs__item--active">
+                    <a href="#" class="history-tabs__link">Tất cả</a>
+                </li>
+                <li class="history-tabs__item">
+                    <a href="#" class="history-tabs__link">Chung</a>
+                </li>
+                <li class="history-tabs__item">
+                    <a href="#" class="history-tabs__link">Tài khoản</a>
+                </li>
+                <li class="history-tabs__item">
+                    <a href="#" class="history-tabs__link">Thanh toán</a>
+                </li>
+                <li class="history-tabs__item">
+                    <a href="#" class="history-tabs__link">Kỹ thuật</a>
+                </li>
+            </ul>
+            <div class="table-scroll">
+                <table class="history-table">
+                    <thead class="history-table__head">
+                        <tr class="history-table__row history-table__row--head">
+                            <th class="history-table__cell history-table__cell--id">
+                                Mã giao dịch
+                            </th>
+                            <th class="history-table__cell history-table__cell--deposit">
+                                Tổng nạp
+                            </th>
+                            <th class="history-table__cell history-table__cell--received">
+                                Tổng nhận
+                            </th>
+                            <th class="history-table__cell history-table__cell--status">
+                                Trạng thái
+                            </th>
+                            <th class="history-table__cell history-table__cell--time">
+                                Thời gian
+                            </th>
+                        </tr>
+                    </thead>
+    
+                    <tbody class="history-table__body">
+                        <%
+                        const transactions = [
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'success',   statusLabel: 'Thành công',  time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'cancelled', statusLabel: 'Đã hủy',      time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'pending',   statusLabel: 'Đang xử lý',  time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'success',   statusLabel: 'Thành công',  time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'success',   statusLabel: 'Thành công',  time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'success',   statusLabel: 'Thành công',  time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'success',   statusLabel: 'Thành công',  time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'success',   statusLabel: 'Thành công',  time: '14/04/2026 - 10:32' },
+                            { id: 'TXN0012458', deposit: '500,000đ', received: '550 3COIN', status: 'success',   statusLabel: 'Thành công',  time: '14/04/2026 - 10:32' },
+                        ];
+                        %>
+                        <% transactions.forEach(function(tx) { %>
+                        <tr class="history-table__row">
+                            <td class="history-table__cell history-table__cell--id"><%= tx.id %></td>
+                            <td class="history-table__cell history-table__cell--deposit"><%= tx.deposit %></td>
+                            <td class="history-table__cell history-table__cell--received"><%= tx.received %></td>
+                            <td class="history-table__cell history-table__cell--status">
+                                <span class="history-table__status history-table__status--<%= tx.status %>">
+                                    <%= tx.statusLabel %>
+                                </span>
+                            </td>
+                            <td class="history-table__cell history-table__cell--time"><%= tx.time %></td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
