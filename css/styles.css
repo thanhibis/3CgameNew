@@ -4200,4 +4200,104 @@ textarea.form-control {
     font-size: 1.6rem;
   }
 }
+
+#page-card_center_xu_in_game {
+  padding-top: 94px;
+}
+
+.xu-in-game {
+  padding: 64px 0 100px;
+  background: url(../img/card_center/xu_in_game/bg-page.jpg) no-repeat top center/cover;
+}
+
+.xu-block {
+  max-width: 672px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 10px;
+  padding: 36px 36px;
+  background: #fff;
+}
+.xu-block__balance {
+  background: #f2f2f2;
+  padding: 7px 13px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 0 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.xu-block__balance .txt-xu {
+  font-weight: 500;
+  font-size: 2.4rem;
+  gap: 0 4px;
+  display: flex;
+  align-items: center;
+}
+.xu-block__ttl {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+.xu-block__option {
+  margin-bottom: 24px;
+  position: relative;
+}
+.xu-block__option:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 13px;
+  height: 8px;
+  background: url(../img/card_center/xu_in_game/arr-select.png) no-repeat center/100%;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.xu-block__option .form-control {
+  padding: 5px 24px;
+  cursor: pointer;
+}
+.xu-block__conversion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 24px;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 26px;
+}
+.xu-block__conversion-item {
+  position: relative;
+}
+.xu-block__conversion-item dt {
+  margin-bottom: 13px;
+}
+.xu-block__conversion-item dd {
+  position: relative;
+}
+.xu-block__conversion-item .form-control {
+  font-weight: 500;
+}
+.xu-block__conversion-item .input-label {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 0 16px;
+}
+.xu-block__note {
+  font-size: 1.6rem;
+  background: #F5CCCC;
+  border-radius: 8px;
+  padding: 16px;
+}
+.xu-block__note img {
+  margin-right: 10px;
+}
 /*# sourceMappingURL=maps/styles.css.map */
