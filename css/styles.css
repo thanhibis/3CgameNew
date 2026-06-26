@@ -4985,20 +4985,25 @@ textarea.form-control {
 .sec-history {
   padding-bottom: 64px;
 }
+@media screen and (max-width: 834px) {
+  .sec-history {
+    padding-bottom: 50px;
+  }
+}
 
 .history-tabs {
-  display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
           justify-content: center;
-  gap: 6px;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  gap: 16px;
   list-style: none;
-  margin: 0 0 24px;
+  margin: 0 0 38px;
   padding: 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -5010,9 +5015,13 @@ textarea.form-control {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 6px 18px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2px 20px;
   border-radius: 18px;
   font-size: 1.6rem;
+  min-width: 100px;
   font-weight: 300;
   text-decoration: none;
   border: 1px solid #D9D9D9;
@@ -5030,6 +5039,7 @@ textarea.form-control {
 
 .table-scroll {
   overflow-x: auto;
+  margin-bottom: 36px;
 }
 
 .history-table {
@@ -5041,6 +5051,9 @@ textarea.form-control {
   .history-table {
     font-size: 1.6rem;
   }
+}
+.history-table__head {
+  border-bottom: 1px solid #D9D9D9;
 }
 .history-table__body tr {
   background: #fff;
@@ -5115,5 +5128,12 @@ textarea.form-control {
   .sec-history .inner {
     padding: 0 16px;
   }
+}
+.txt-empty {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #8d8d8d;
+  margin-top: 16px;
 }
 /*# sourceMappingURL=maps/styles.css.map */
