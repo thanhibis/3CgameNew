@@ -36,8 +36,28 @@
                     <img src="<%= RELATIVE_PATH %>img/card_center/xu_in_game/icon-note.png" alt="3CGAME" width="20">
                     Tỉ lệ quy đổi: 1 3CCoin = 10 xu game
                 </div>
-                <button class="c-btn__01" type="submit"></button>
+                <button class="c-btn__02 xu-block__btn open-popup" type="submit">XÁC NHẬN</button>
             </div>
         </div>
     </section>
+    <div class="popup">
+		<div class="popup-bg close-popup"></div>
+		<div class="popup-ct c-txt__basic">
+			<div class="popup-ct__close close-popup">
+				<img src="<%= RELATIVE_PATH %>img/common/close.png" alt="close">
+			</div>
+            <div class="icon-success">
+                <img src="<%= RELATIVE_PATH %>img/common/icon-success.png" alt="Success">
+            </div>
+			<h3 class="popup-ct__ttl">Chuyển xu thành công</h3>
+			<div class="popup-content">
+                <p>Bạn đã chuyển thành công 1.000 3C Coin vào game [Tên game] - server [Tên server].</p>
+                <p class="txt-result"> 10.000 Xu Game</p>
+            </div>
+            <div class="group-control">
+                <a href="#" class="group-control__btn">Đóng</a>
+                <a href="#" class="group-control__btn">Lịch sử giao dịch</a>
+            </div>
+		</div>
+	</div>
 </main>

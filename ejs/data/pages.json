@@ -263,6 +263,30 @@
 			"keyword": "",
 			"h1": "",
 			"depth": 2
+		},
+		{
+			"id": "index",
+			"parentId1": "card_center",
+			"parentId2": "top_up_game",
+			"parentId3": "",
+			"parentId4": "",
+			"bread1": "",
+			"bread2": "",
+			"bread3": "",
+			"bread4": "",
+			"bread5": "",
+			"bread1_url": "/",
+			"bread2_url": "",
+			"bread3_url": "",
+			"bread4_url": "",
+			"bread5_url": "",
+			"template": "card_center_top_up_game",
+			"title": "",
+			"description": "",
+			"description_meta": "",
+			"keyword": "",
+			"h1": "",
+			"depth": 2
 		}
 	]
 }
