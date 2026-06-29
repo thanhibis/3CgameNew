@@ -6,13 +6,31 @@ $('.js-mobile').on('click', function () {
   $("html").toggleClass("js-locked");
   $(".header-nav").toggleClass("active");
 });
-$('.header-language span').on('click', function () {
-  $(this).next("ul").slideToggle();
-});
 $('.news-show__option-fill span').on('click', function () {
   $(this).next("ul").slideToggle();
 });
-var swiper = new Swiper(".mv-list", {
+$('.header-account__content-language dt').on('click', function () {
+  $(this).next("dd").slideToggle();
+});
+$('.header-account__img').on('click', function (e) {
+  e.stopPropagation();
+  $(this).next('.header-account__content').toggleClass('active');
+  $('.header-language ul').removeClass('active');
+});
+$('.header-language span').on('click', function (e) {
+  e.stopPropagation();
+  $(this).next('ul').toggleClass('active');
+  $('.header-account__content').removeClass('active');
+});
+$(document).on('click', function (e) {
+  if (!$(e.target).closest('.header-account').length) {
+    $('.header-account__content').removeClass('active');
+  }
+  if (!$(e.target).closest('.header-language').length) {
+    $('.header-language ul').removeClass('active');
+  }
+});
+const swiper = new Swiper(".mv-list", {
   loop: true,
   effect: "fade",
   fadeEffect: {
@@ -145,14 +163,14 @@ var swiper5 = new Swiper(".mySwiper2", {
   }
 });
 if ($("#uploadBox").length > 0) {
-  var uploadBox = document.getElementById("uploadBox");
-  var fileInput = document.getElementById("fileInput");
-  var uploadText = document.getElementById("uploadText");
-  uploadBox.addEventListener("click", function () {
+  const uploadBox = document.getElementById("uploadBox");
+  const fileInput = document.getElementById("fileInput");
+  const uploadText = document.getElementById("uploadText");
+  uploadBox.addEventListener("click", () => {
     fileInput.click();
   });
-  fileInput.addEventListener("change", function (e) {
-    var file = e.target.files[0];
+  fileInput.addEventListener("change", e => {
+    const file = e.target.files[0];
     if (file) {
       uploadText.textContent = file.name;
       console.log(file);
@@ -168,10 +186,10 @@ $('.close-popup').on('click', function () {
   $("html").removeClass("js-locked");
   $(".popup").removeClass("active");
 });
-var input = document.querySelector('#amount');
+const input = document.querySelector('#amount');
 input.addEventListener('input', function () {
   // Chỉ giữ lại số
-  var value = this.value.replace(/\D/g, '');
+  let value = this.value.replace(/\D/g, '');
   if (!value) {
     this.value = '';
     return;
@@ -180,10 +198,10 @@ input.addEventListener('input', function () {
   // Format theo VN
   this.value = Number(value).toLocaleString('vi-VN');
 });
-var amountInput = document.querySelector('#amount-detail');
-var amountRadios = document.querySelectorAll('input[name="amount"]');
+const amountInput = document.querySelector('#amount-detail');
+const amountRadios = document.querySelectorAll('input[name="amount"]');
 function toggleAmountInput() {
-  var checked = document.querySelector('input[name="amount"]:checked');
+  const checked = document.querySelector('input[name="amount"]:checked');
   console.log(checked);
   if (checked.value === 'other') {
     amountInput.style.display = 'block';
@@ -193,7 +211,7 @@ function toggleAmountInput() {
 }
 
 // Gán sự kiện cho tất cả radio
-amountRadios.forEach(function (radio) {
+amountRadios.forEach(radio => {
   radio.addEventListener('change', toggleAmountInput);
 });
 

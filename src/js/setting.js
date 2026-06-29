@@ -4,12 +4,36 @@ $('.js-mobile').on('click', function () {
 	$("html").toggleClass("js-locked");
 	$(".header-nav").toggleClass("active");
 });
-$('.header-language span').on('click', function () {
-	$(this).next("ul").slideToggle();
-});
+
 $('.news-show__option-fill span').on('click', function () {
 	$(this).next("ul").slideToggle();
 });
+
+$('.header-account__content-language dt').on('click', function () {
+	$(this).next("dd").slideToggle();
+});
+
+$('.header-account__img').on('click', function (e) {
+	e.stopPropagation();
+	$(this).next('.header-account__content').toggleClass('active');
+	$('.header-language ul').removeClass('active');
+});
+$('.header-language span').on('click', function (e) {
+	e.stopPropagation();
+	$(this).next('ul').toggleClass('active');
+	$('.header-account__content').removeClass('active');
+});
+
+$(document).on('click', function (e) {
+	if (!$(e.target).closest('.header-account').length) {
+		$('.header-account__content').removeClass('active');
+	}
+	if (!$(e.target).closest('.header-language').length) {
+		$('.header-language ul').removeClass('active');
+	}
+});
+
+
 
 const swiper = new Swiper(".mv-list", {
 	loop: true,

@@ -1,12 +1,16 @@
-<main id="page-<%= pageData.template %>">
-	<section class="support-content">
-		<div class="inner">
-			<h2 class="c-ttl__02 c-fc--orange c-al--c mbpc-10 mbsp-10">Tất cả game của chúng tôi</h2>
-			<div class="c-al--c c-txt__basic mbpc-50 mbsp-30">
-				<p>
-					Chọn trò chơi của bạn để gửi yêu cầu hỗ trợ
-				</p>
-			</div>
+<div class="popup">
+	<div class="popup-bg close-popup"></div>
+	<div class="popup-ct popup-ct--game c-txt__basic">
+		<div class="popup-ct__close close-popup">
+			<img src="<%= RELATIVE_PATH %>img/common/close.png" alt="close">
+		</div>
+		<h3 class="popup-ct__ttl">
+			Chọn game cần hỗ trợ
+		</h3>
+		<p class="c-al--c mbpc-30 mbsp-20">
+			Bạn có thể chọn trò chơi của bạn dưới đây để gửi yêu cầu hỗ trợ
+		</p>
+		<div class="popup-game">
 			<ul class="game-list">
 				<li class="game-list__item">
 					<a href="#">
@@ -204,7 +208,5 @@
 				</li>
 			</ul>
 		</div>
-	</section>
-	<%- include('common/_contact'); %>
-	<%- include('common/_popup-game'); %>
-</main>
+	</div>
+</div>

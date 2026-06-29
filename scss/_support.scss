@@ -3,3 +3,93 @@
 .support-content{
 	padding: 0 0 100px;
 }
+
+.popup-ct{
+	&--game{
+		max-width: 1272px;
+	}
+}
+.popup-game{
+	height: 567px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding-right: 15px;
+	@include mq(){
+		height: 370px;
+	}
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #D9D9D9;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $orange;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: $orange;
+	}
+}
+
+
+
+.support-steps{
+	@include flex(center,0,wrap);
+	li{
+		margin: 0 30px;
+		width: 110px;
+		text-align: center;
+		@include font-size(12);
+		font-weight: 500;
+	}
+	&__status{
+		width: 36px;
+		height: 36px;
+		margin: 0 auto 20px;
+		@include flex(center,center,wrap);
+		position: relative;
+		background: #8D8D8D;
+		border-radius: 5px;
+		color: white;
+		@include font-size(16);
+		line-height: 1;
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			@include ob;
+			border-radius: 5px;
+		}
+		&:before{
+			content: "";
+			position: absolute;
+			@include v-align;
+			right: calc(100% + 10px);
+			height: 1px;
+			width: 115px;
+			background: #8D8D8D;
+		}
+		&--first{
+			&:before{
+				display: none;
+			}
+		}
+		&.active{
+			background: #97CC6D;
+			&:before{
+				background: #97CC6D;
+			}
+		}
+	}
+	&__ttl{
+		display: block;
+		text-align: center;
+		@include font-size(14);
+		margin-bottom: 5px;
+	}
+}
