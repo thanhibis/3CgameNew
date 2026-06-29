@@ -8,6 +8,10 @@ $('.js-mobile').on('click', function () {
 $('.news-show__option-fill span').on('click', function () {
 	$(this).next("ul").slideToggle();
 });
+$('.support-qa dl dt').on('click', function () {
+	$(this).toggleClass("active");
+	$(this).next("dd").slideToggle();
+});
 
 $('.header-account__content-language dt').on('click', function () {
 	$(this).next("dd").slideToggle();
@@ -191,10 +195,26 @@ if ($("#uploadBox").length > 0) {
 
 		if (file) {
 			uploadText.textContent = file.name;
-			console.log(file);
 		}
 	});
+}
 
+if ($("#uploadBox-img").length > 0) {
+	const uploadBox = document.getElementById("uploadBox-img");
+	const fileInput = document.getElementById("fileInput-img");
+	const uploadText = document.getElementById("uploadText-img");
+	
+	uploadBox.addEventListener("click", () => {
+		fileInput.click();
+	});
+	
+	fileInput.addEventListener("change", (e) => {
+		const file = e.target.files[0];
+		
+		if (file) {
+			uploadText.textContent = file.name;
+		}
+	});
 }
 
 

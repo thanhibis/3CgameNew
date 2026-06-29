@@ -11,6 +11,9 @@
 	&--orange{
 		color: $orange !important;
 	}
+	&--red{
+		color: $red !important;
+	}
 }
 
 
@@ -111,6 +114,13 @@ Component
 		@include font-size(20);
 		font-weight: 500;
 		margin-bottom: 15px;
+	}
+	&__04{
+		display: block;
+		text-align: center;
+		@include font-size(24);
+		font-weight: 500;
+		margin-bottom: 30px;
 	}
 }
 

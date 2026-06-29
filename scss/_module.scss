@@ -206,6 +206,10 @@ textarea.form-control{
 			position: absolute;
 			top: -310px;
 			right: -50px;
+			@include mq(){
+				top: -220px;
+				right: 0;
+			}
 		}
 	}
 	p{

@@ -71,6 +71,60 @@
 					</ul>
 				</div>
 			<% }
+			<% if(pageData.parentId1 == "card_center"){ %>
+				<nav class="header-nav">
+					<ul class="header-nav__menu">
+						<li class="header-nav__menu-item">
+							<a href="" >Nạp 3C Coin</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">Lịch sử giao dịch</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header-account c-txt__basic">
+					<div class="header-account__img">
+						<img src="<%= RELATIVE_PATH %>img/common/avatar.png" alt="3CGAME">
+					</div>
+					<div class="header-account__content">
+						<div class="header-account__content-heading">
+							<div class="header-account__content-heading-img">
+								<img src="<%= RELATIVE_PATH %>img/common/avatar.png" alt="3CGAME">
+							</div>
+							<div class="header-account__content-heading-name">
+								<p>
+									Nam Duong
+								</p>
+								<p>
+									#5438951
+								</p>
+							</div>
+						</div>
+						<dl class="header-account__content-heading-coi">
+							<dt>Số dư ví:</dt>
+							<dd>3.000 <img src="<%= RELATIVE_PATH %>img/common/coi.png" alt="3CGAME"></dd>
+						</dl>
+						<dl class="header-account__content-language sp-tb">
+							<dt>Ngôn ngữ  <span>VN</span></dt>
+							<dd>
+								<a href="" class="active">Tiếng Việt</a>
+								<a href="">English</a>
+								<a href="">中国人</a>
+							</dd>
+						</dl>
+						<a href="" class="header-account__content-link"><img src="<%= RELATIVE_PATH %>img/common/lock.png" alt="3CGAME">Đổi mật khẩu</a>
+						<a href="" class="header-account__content-link"><img src="<%= RELATIVE_PATH %>img/common/logout.png" alt="3CGAME">Đăng xuất</a>
+					</div>
+				</div>
+				<div class="header-language pc-tb">
+					<span>VI</span>
+					<ul>
+						<li><a href="" class="active">Tiếng Việt</a></li>
+						<li><a href="">English</a></li>
+						<li><a href="">中国人</a></li>
+					</ul>
+				</div>
+			<% }
 			else { %>
 				<nav class="header-nav">
 					<ul class="header-nav__menu">

@@ -2,6 +2,9 @@
 
 .support-content{
 	padding: 0 0 100px;
+	@include mq(){
+		padding-bottom: 0;
+	}
 }
 
 .popup-ct{
@@ -38,12 +41,25 @@
 
 .support-steps{
 	@include flex(center,0,wrap);
+	margin-bottom: 50px;
 	li{
 		margin: 0 30px;
 		width: 110px;
 		text-align: center;
 		@include font-size(12);
 		font-weight: 500;
+		@include mq(){
+			max-width: 114px;
+			width: 33.333%;
+			margin: 0;
+			padding: 0 10px;
+		}
+		&:nth-child(1){
+			margin-left: 0;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
 	}
 	&__status{
 		width: 36px;
@@ -73,6 +89,9 @@
 			height: 1px;
 			width: 115px;
 			background: #8D8D8D;
+			@include mq(){
+				width: 60px;
+			}
 		}
 		&--first{
 			&:before{
@@ -91,5 +110,147 @@
 		text-align: center;
 		@include font-size(14);
 		margin-bottom: 5px;
+	}
+}
+
+.support-qa{
+	color: #454545;
+	line-height: 1.8;
+	background: white;
+	padding: 40px 30px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	border-radius: 15px;
+	@include mq(){
+		padding: 30px 15px;
+	}
+	&__ttl{
+
+	}
+	dl{
+		dt{
+			padding: 10px 20px 10px 0;
+			border-bottom: 1px solid #454545;
+			position: relative;
+			cursor: pointer;
+			text-align: left;
+			&:after{
+				content: "";
+				width: 12px;
+				height: 24px;
+				background: url("../img/common/arrow-right04.png")no-repeat;
+				background-size: 100%;
+				position: absolute;
+				@include v-align;
+				right: 0;
+			}
+			&.active{
+				&:after{
+					width: 24px;
+					height: 12px;
+					background: url("../img/common/arrow-up.png")no-repeat;
+					background-size: 100%;
+					right: -5px;
+				}
+			}
+		}
+		dd{
+			color: #8D8D8D;
+			padding: 15px 0;
+			display: none;
+			.c-btn__01{
+				display: block;
+				text-align: center;
+				margin-top: 20px;
+			}
+			ul{
+				li{
+					position: relative;
+					padding: 0 0 0 15px;
+					&:before{
+						content: "";
+						width: 6px;
+						height: 6px;
+						border-radius: 50%;
+						background: #8D8D8D;
+						position: absolute;
+						top: 10px;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.support-contact{
+	line-height: 1.8;
+	background: white;
+	padding: 40px 30px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	border-radius: 15px;
+	max-width: 900px;
+	margin: 0 auto;
+	@include mq(){
+		padding: 30px 15px;
+	}
+	&__note{
+		text-align: center;
+		margin-bottom: 30px;
+		@include mq(){
+			color: black;
+		}
+		span{
+			display: inline-block;
+			background: rgba(#B91C1C1A,0.1);
+			@include font-size(14);
+			border-radius: 4px;
+			padding: 10px 15px;
+		}
+	}
+	.contact-block__form{
+		width: 100%;
+		dl{
+			dt{
+				margin-bottom: 0;
+			}
+		}
+		&-sub{
+			.c-btn__02{
+				max-width: 250px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.contact-block__form{
+	&-file{
+		margin-bottom: 30px;
+		p{
+			margin-bottom: 20px;
+		}
+	}
+	.file-custom{
+		position: relative;
+		#uploadText-img{
+			display: block;
+			background: #FFEAD2;
+			position: relative;
+			padding: 10px 20px;
+			cursor: pointer;
+			@include mq(){
+				@include font-size(14);
+			}
+			&:after{
+				content: "";
+				width: 24px;
+				height: 24px;
+				background: url("../img/common/up-file.png")no-repeat;
+				background-size: 100%;
+				position: absolute;
+				@include v-align;
+				right: 10px;
+			}
+		}
 	}
 }

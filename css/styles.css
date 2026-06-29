@@ -1263,6 +1263,9 @@ a:hover {
 .c-fc--orange {
   color: #F68F19 !important;
 }
+.c-fc--red {
+  color: #B91C1C !important;
+}
 
 .c-al--c {
   text-align: center !important;
@@ -1335,6 +1338,13 @@ Component
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 15px;
+}
+.c-ttl__04 {
+  display: block;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
 
 .c-btn__01 {
@@ -1665,6 +1675,12 @@ textarea.form-control {
   position: absolute;
   top: -310px;
   right: -50px;
+}
+@media screen and (max-width: 834px) {
+  .contact-inc .inner:after {
+    top: -220px;
+    right: 0;
+  }
 }
 .contact-inc p {
   margin-bottom: 20px;
@@ -4170,6 +4186,10 @@ textarea.form-control {
   display: block;
 }
 
+.contact-map img {
+  width: 100%;
+}
+
 .sec-company {
   padding: 0 0 100px;
 }
@@ -4218,6 +4238,11 @@ textarea.form-control {
 .support-content {
   padding: 0 0 100px;
 }
+@media screen and (max-width: 834px) {
+  .support-content {
+    padding-bottom: 0;
+  }
+}
 
 .popup-ct--game {
   max-width: 1272px;
@@ -4251,6 +4276,7 @@ textarea.form-control {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 .support-steps li {
   margin: 0 30px;
@@ -4258,6 +4284,20 @@ textarea.form-control {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 500;
+}
+@media screen and (max-width: 834px) {
+  .support-steps li {
+    max-width: 114px;
+    width: 33.333%;
+    margin: 0;
+    padding: 0 10px;
+  }
+}
+.support-steps li:nth-child(1) {
+  margin-left: 0;
+}
+.support-steps li:last-child {
+  margin-right: 0;
 }
 .support-steps__status {
   width: 36px;
@@ -4295,6 +4335,11 @@ textarea.form-control {
   width: 115px;
   background: #8D8D8D;
 }
+@media screen and (max-width: 834px) {
+  .support-steps__status:before {
+    width: 60px;
+  }
+}
 .support-steps__status--first:before {
   display: none;
 }
@@ -4309,6 +4354,143 @@ textarea.form-control {
   text-align: center;
   font-size: 1.4rem;
   margin-bottom: 5px;
+}
+
+.support-qa {
+  color: #454545;
+  line-height: 1.8;
+  background: white;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+@media screen and (max-width: 834px) {
+  .support-qa {
+    padding: 30px 15px;
+  }
+}
+.support-qa dl dt {
+  padding: 10px 20px 10px 0;
+  border-bottom: 1px solid #454545;
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+}
+.support-qa dl dt:after {
+  content: "";
+  width: 12px;
+  height: 24px;
+  background: url("../img/common/arrow-right04.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+.support-qa dl dt.active:after {
+  width: 24px;
+  height: 12px;
+  background: url("../img/common/arrow-up.png") no-repeat;
+  background-size: 100%;
+  right: -5px;
+}
+.support-qa dl dd {
+  color: #8D8D8D;
+  padding: 15px 0;
+  display: none;
+}
+.support-qa dl dd .c-btn__01 {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+.support-qa dl dd ul li {
+  position: relative;
+  padding: 0 0 0 15px;
+}
+.support-qa dl dd ul li:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8D8D8D;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.support-contact {
+  line-height: 1.8;
+  background: white;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 834px) {
+  .support-contact {
+    padding: 30px 15px;
+  }
+}
+.support-contact__note {
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 834px) {
+  .support-contact__note {
+    color: black;
+  }
+}
+.support-contact__note span {
+  display: inline-block;
+  background: rgba(185, 28, 28, 0.1);
+  font-size: 1.4rem;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+.support-contact .contact-block__form {
+  width: 100%;
+}
+.support-contact .contact-block__form dl dt {
+  margin-bottom: 0;
+}
+.support-contact .contact-block__form-sub .c-btn__02 {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.contact-block__form-file {
+  margin-bottom: 30px;
+}
+.contact-block__form-file p {
+  margin-bottom: 20px;
+}
+.contact-block__form .file-custom {
+  position: relative;
+}
+.contact-block__form .file-custom #uploadText-img {
+  display: block;
+  background: #FFEAD2;
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+@media screen and (max-width: 834px) {
+  .contact-block__form .file-custom #uploadText-img {
+    font-size: 1.4rem;
+  }
+}
+.contact-block__form .file-custom #uploadText-img:after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url("../img/common/up-file.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
 }
 
 .card-game {
