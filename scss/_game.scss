@@ -194,4 +194,12 @@
 			}
 		}
 	}
+	&--top{
+		a{
+			&:after{
+				display: none !important;
+			}
+		}
+	}
 }
+

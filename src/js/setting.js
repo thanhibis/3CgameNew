@@ -224,6 +224,16 @@ jQuery('.open-popup').click(function (e) {
 	$(".popup").addClass("active");
 	e.preventDefault();
 });
+jQuery('.open-popup-game').click(function (e) {
+	$("html").addClass("js-locked");
+	$(".popup-game").addClass("active");
+	e.preventDefault();
+});
+jQuery('.open-popup-ticket').click(function (e) {
+	$("html").addClass("js-locked");
+	$(".popup-ticket").addClass("active");
+	e.preventDefault();
+});
 $('.close-popup').on('click', function () {
 	$("html").removeClass("js-locked");
 	$(".popup").removeClass("active");

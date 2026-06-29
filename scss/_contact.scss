@@ -61,9 +61,9 @@
 			}
 		}
 		&-sub{
+			@include flex(center,center,wrap);
 			.c-btn__02{
-				width: 100%;
-				display: block;
+				margin: 0 10px 15px;
 			}
 		}
 	}

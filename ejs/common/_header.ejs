@@ -3,7 +3,7 @@
 		<div class="inner">
 			<ul class="header-top__item">
 				<li><a href=""><img src="<%= RELATIVE_PATH %>img/common/icon-01.png" alt="Tài khoản">Tài khoản</a></li>
-				<li><a href=""><img src="<%= RELATIVE_PATH %>img/common/icon-02.png" alt="Trung tâm nạp">Trung tâm nạp</a></li>
+				<li><a href="" class="<% if(pageData.parentId1 == 'card_center'){ %> active <% } %>><img src="<%= RELATIVE_PATH %>img/common/icon-02.png" alt="Trung tâm nạp">Trung tâm nạp</a></li>
 				<li><a href="" class="<% if(pageData.parentId1 == 'support'){ %> active <% } %>"><img src="<%= RELATIVE_PATH %>img/common/icon-03.png" alt="Hỗ trợ khách hàng">Hỗ trợ khách hàng</a></li>
 			</ul>
 			<a href="tel:19001168" class="pc-tb"><img src="<%= RELATIVE_PATH %>img/common/icon-04.png" alt="19001168">19001168</a>
@@ -18,7 +18,7 @@
 				<nav class="header-nav">
 					<ul class="header-nav__menu">
 						<li class="header-nav__menu-item">
-							<a href="" class="open-popup">Tạo yêu cầu hỗ trợ</a>
+							<a href="" class="open-popup-game">Tạo yêu cầu hỗ trợ</a>
 						</li>
 						<li class="header-nav__menu-item">
 							<a href="">FAQs</a>
@@ -70,7 +70,8 @@
 						<li><a href="">中国人</a></li>
 					</ul>
 				</div>
-			<% } else if(pageData.parentId1 == "card_center"){ %>
+			<% }
+			else if(pageData.parentId1 == "card_center"){ %>
 				<nav class="header-nav">
 					<ul class="header-nav__menu">
 						<li class="header-nav__menu-item">

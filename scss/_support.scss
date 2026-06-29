@@ -12,7 +12,7 @@
 		max-width: 1272px;
 	}
 }
-.popup-game{
+.popup-game__ct{
 	height: 567px;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -26,10 +26,12 @@
 
 	&::-webkit-scrollbar-track {
 		background: #D9D9D9;
+		border-radius: 10px;
 	}
 
 	&::-webkit-scrollbar-thumb {
 		background: $orange;
+		border-radius: 10px;
 	}
 
 	&::-webkit-scrollbar-thumb:hover {
@@ -72,15 +74,6 @@
 		color: white;
 		@include font-size(16);
 		line-height: 1;
-		img{
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			@include ob;
-			border-radius: 5px;
-		}
 		&:before{
 			content: "";
 			position: absolute;
@@ -93,15 +86,33 @@
 				width: 60px;
 			}
 		}
+		img{
+			width: 24px;
+		}
 		&--first{
 			&:before{
 				display: none;
+			}
+			img{
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				@include ob;
+				border-radius: 5px;
 			}
 		}
 		&.active{
 			background: #97CC6D;
 			&:before{
 				background: #97CC6D;
+			}
+		}
+		&--last{
+			&.active{
+				background: $orange;
 			}
 		}
 	}
@@ -215,10 +226,7 @@
 			}
 		}
 		&-sub{
-			.c-btn__02{
-				max-width: 250px;
-				margin: 0 auto;
-			}
+
 		}
 	}
 }
@@ -250,6 +258,185 @@
 				position: absolute;
 				@include v-align;
 				right: 10px;
+			}
+		}
+	}
+	&-sub{
+
+	}
+}
+
+.support-noty{
+	text-align: center;
+	max-width: 520px;
+	p{
+		margin-bottom: 20px;
+	}
+	&__code{
+		@include font-size(18);
+		color: $orange;
+		background: #F4F4F4;
+		padding: 10px;
+		border-radius: 10px;
+		display: inline-block;
+		margin-bottom: 20px;
+	}
+	.contact-block__form-sub{
+		.c-btn__02{
+			width: 180px;
+			padding: 15px;
+		}
+	}
+}
+.support-search{
+	max-width: 400px;
+	margin: 0 auto;
+	position: relative;
+	margin-bottom: 50px;
+	.form-control{
+		border-radius: 50px;
+		background: #F4F4F4;
+	}
+	&__btn{
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background: $orange;
+		border: none;
+		outline: none;
+		@include flex(center,center);
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		@include smooth-transition;
+		&:hover{
+			opacity: 0.7;
+		}
+		img{
+			width: 20px;
+		}
+	}
+}
+.support-heading{
+	background: white;
+	border-radius: 15px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	@include flex(between,center,wrap);
+	padding: 30px 20px;
+	margin-bottom: 50px;
+	@include mq(){
+		justify-content: center;
+	}
+	.c-ttl__04{
+		@include mq(md-min){
+			margin-bottom: 0;
+		}
+		@include mq(){
+			width: 100%;
+		}
+	}
+}
+
+.support-fill{
+	@include flex(0,0,wrap);
+	margin-bottom: 20px;
+	li{
+		margin: 0 15px 10px 0;
+		a{
+			display: block;
+			background: white;
+			@include font-size(16);
+			border: 1px solid #D9D9D9;
+			border-radius: 30px;
+			color: $basic;
+			padding: 3px 20px;
+			&.active,&:hover{
+				background: $orange;
+				color: white;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.support-member{
+	&__item{
+		margin-bottom: 15px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__box{
+		background: white;
+		border-radius: 15px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+		padding: 15px;
+		color: $basic;
+		@include flex(between,0,wrap);
+		position: relative;
+		cursor: pointer;
+	}
+	&__ct{
+		width: calc(100% - 150px);
+		padding: 0 20px 0 0;
+		@include mq(){
+			width: 100%;
+			padding: 0;
+		}
+		&-ttl{
+			display: block;
+			@include font-size(18);
+			font-weight: 300;
+			@include mq(){
+				padding: 0 110px 0 0;
+			}
+		}
+		ul{
+			@include flex(0,0,wrap);
+			li{
+				margin: 0 20px 0 0;
+				color: #6B7280;
+			}
+		}
+	}
+	&__note{
+		width: 150px;
+		text-align: right;
+		@include mq(){
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			width: 110px;
+		}
+		&-status{
+			display: inline-block;
+			color: #2D9CDB;
+			position: relative;
+			padding: 0 0 0 15px;
+			&:before{
+				content: "";
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				position: absolute;
+				@include v-align;
+				left: 0;
+				background: #2D9CDB;
+			}
+			&.c-fc--orange{
+				&:before{
+					background: $orange;
+				}
+			}
+		}
+		time{
+			padding: 0;
+			@include mq(){
+				display: none;
+			}
+			&:before{
+				display: none;
 			}
 		}
 	}
