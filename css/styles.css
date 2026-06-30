@@ -1266,6 +1266,9 @@ a:hover {
 .c-fc--red {
   color: #B91C1C !important;
 }
+.c-fc--gray {
+  color: #8D8D8D !important;
+}
 
 .c-al--c {
   text-align: center !important;
@@ -1499,7 +1502,7 @@ main {
   height: 48px;
   background: white;
   border: 1px solid #D9D9D9;
-  padding: 5px 10px;
+  padding: 5px 15px;
   font-size: 1.6rem;
   border-radius: 5px;
 }
@@ -1509,16 +1512,16 @@ main {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 .form-control::-webkit-input-placeholder {
-  color: #D9D9D9;
+  color: #828181;
 }
 .form-control:-moz-placeholder {
-  color: #D9D9D9;
+  color: #828181;
 }
 .form-control::-moz-placeholder {
-  color: #D9D9D9;
+  color: #828181;
 }
 .form-control:-ms-input-placeholder {
-  color: #D9D9D9;
+  color: #828181;
 }
 
 input::-webkit-outer-spin-button,
@@ -1830,7 +1833,7 @@ textarea.form-control {
   display: block;
   width: 16px;
   position: absolute;
-  top: 50%;
+  top: 48%;
   transform: translateY(-50%);
   left: 7px;
 }
@@ -1912,7 +1915,7 @@ textarea.form-control {
     padding: 10px 30px;
   }
 }
-#header .header-nav__menu-item a:hover {
+#header .header-nav__menu-item a:hover, #header .header-nav__menu-item a.active {
   opacity: 1;
   color: #F68F19;
 }
@@ -4480,21 +4483,20 @@ textarea.form-control {
 }
 .support-qa dl dt:after {
   content: "";
-  width: 12px;
-  height: 24px;
-  background: url("../img/common/arrow-right04.png") no-repeat;
-  background-size: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-}
-.support-qa dl dt.active:after {
   width: 24px;
   height: 12px;
-  background: url("../img/common/arrow-up.png") no-repeat;
+  background: url(../img/common/arrow-up.png) no-repeat;
   background-size: 100%;
-  right: -5px;
+  position: absolute;
+  top: 24%;
+  transform: rotate(180deg) translateY(-50%);
+  right: 0;
+  -webkit-backface-visibility: hidden;
+  transition: all 0.3s ease;
+}
+.support-qa dl dt.active:after {
+  top: 50%;
+  transform: rotate(0) translateY(-50%);
 }
 .support-qa dl dd {
   color: #8D8D8D;
@@ -4519,6 +4521,32 @@ textarea.form-control {
   position: absolute;
   top: 10px;
   left: 0;
+}
+.support-qa--02 {
+  background: none;
+  box-shadow: none;
+  padding: 30px 0 0;
+}
+.support-qa--02 dl {
+  background: #F2F2F2;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  border-radius: 4px;
+}
+.support-qa--02 dl dt {
+  border-bottom: none;
+}
+.support-qa--02 dl dd {
+  font-size: 1.4rem;
+  line-height: 1.4285714286;
+  color: #454545;
+  padding-top: 0;
+}
+.support-qa--02 .c-ttl__03 {
+  margin-top: 40px;
+}
+.support-qa--02 .c-ttl__03:nth-child(1) {
+  margin-top: 0;
 }
 
 .support-contact {
@@ -4675,6 +4703,9 @@ textarea.form-control {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+}
+.support-fill--center {
+  justify-content: center;
 }
 .support-fill li {
   margin: 0 15px 10px 0;

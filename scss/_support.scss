@@ -134,9 +134,6 @@
 	@include mq(){
 		padding: 30px 15px;
 	}
-	&__ttl{
-
-	}
 	dl{
 		dt{
 			padding: 10px 20px 10px 0;
@@ -146,21 +143,20 @@
 			text-align: left;
 			&:after{
 				content: "";
-				width: 12px;
-				height: 24px;
-				background: url("../img/common/arrow-right04.png")no-repeat;
+				width: 24px;
+				height: 12px;
+				background: url(../img/common/arrow-up.png) no-repeat;
 				background-size: 100%;
 				position: absolute;
-				@include v-align;
+				top: 24%;
+				transform: rotate(180deg) translateY(-50%);
 				right: 0;
+				@include smooth-transition;
 			}
 			&.active{
 				&:after{
-					width: 24px;
-					height: 12px;
-					background: url("../img/common/arrow-up.png")no-repeat;
-					background-size: 100%;
-					right: -5px;
+					top: 50%;
+					transform: rotate(0) translateY(-50%);
 				}
 			}
 		}
@@ -188,6 +184,31 @@
 						left: 0;
 					}
 				}
+			}
+		}
+	}
+	&--02{
+		background: none;
+		box-shadow: none;
+		padding: 30px 0 0;
+		dl{
+			background: #F2F2F2;
+			margin-bottom: 20px;
+			padding: 0 15px;
+			border-radius: 4px;
+			dt{
+				border-bottom: none;
+			}
+			dd{
+				@include fts(14,20);
+				color: #454545;
+				padding-top: 0;
+			}
+		}
+		.c-ttl__03{
+			margin-top: 40px;
+			&:nth-child(1){
+				margin-top: 0;
 			}
 		}
 	}
@@ -341,6 +362,9 @@
 .support-fill{
 	@include flex(0,0,wrap);
 	margin-bottom: 20px;
+	&--center{
+		justify-content: center;
+	}
 	li{
 		margin: 0 15px 10px 0;
 		a{

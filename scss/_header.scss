@@ -38,7 +38,8 @@
 				display: block;
 				width: 16px;
 				position: absolute;
-				@include v-align;
+				top: 48%;
+				transform: translateY(-50%);
 				left: 7px;
 				@include mq(sm){
 					width: 14px;
@@ -103,7 +104,7 @@
 					@include mq(tb){
 						padding: 10px 30px;
 					}
-					&:hover{
+					&:hover,&.active{
 						opacity: 1;
 						color: $orange;
 					}
