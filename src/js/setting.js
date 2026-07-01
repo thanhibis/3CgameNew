@@ -240,6 +240,15 @@ $('.close-popup').on('click', function () {
 });
 
 
+document.querySelectorAll('.show-pass').forEach(button => {
+	button.addEventListener('click', () => {
+		const input = button.closest('.account-block__item').querySelector('.input-pass');
+		
+		input.type = input.type === 'password' ? 'text' : 'password';
+	});
+});
+
+
 const input = document.querySelector('#amount');
 
 input.addEventListener('input', function () {
@@ -278,3 +287,9 @@ amountRadios.forEach(radio => {
 
 // Chạy khi tải trang
 toggleAmountInput();
+
+
+
+
+
+

@@ -1524,6 +1524,20 @@ main {
   color: #828181;
 }
 
+.input-user {
+  background: white url("../img/account/user.png") no-repeat;
+  background-size: 16px;
+  background-position: 15px;
+  padding-left: 40px;
+}
+
+.input-pass {
+  background: white url("../img/account/pass.png") no-repeat;
+  background-size: 16px;
+  background-position: 15px;
+  padding-left: 40px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -5637,5 +5651,69 @@ textarea.form-control {
     grid-template-columns: 1fr;
     gap: 10px;
   }
+}
+
+.mv-account {
+  background: url("../img/account/mv.png") no-repeat;
+  background-size: cover;
+  background-position: top right;
+  color: white;
+  text-align: center;
+  padding: 80px 15px 140px;
+}
+@media screen and (max-width: 834px) {
+  .mv-account {
+    padding: 40px 15px 180px;
+  }
+}
+
+.sec-account {
+  margin-top: -100px;
+  z-index: 1;
+  padding: 0 0 100px;
+}
+@media screen and (max-width: 834px) {
+  .sec-account {
+    margin-top: -170px;
+    padding: 0 0 70px;
+  }
+}
+
+.account-block {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  max-width: 670px;
+  margin: 0 auto;
+}
+.account-block a {
+  color: #1F1F1F;
+  text-decoration: underline;
+}
+.account-block__item {
+  position: relative;
+  margin-bottom: 15px;
+}
+.account-block__item .show-pass {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.account-block__item .show-pass img {
+  width: 16px;
+}
+.account-block__sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
 }
 /*# sourceMappingURL=maps/styles.css.map */

@@ -2,7 +2,7 @@
 	<div class="header-top">
 		<div class="inner">
 			<ul class="header-top__item">
-				<li><a href=""><img src="<%= RELATIVE_PATH %>img/common/icon-01.png" alt="Tài khoản">Tài khoản</a></li>
+				<li><a href="" class="<% if(pageData.parentId1 == 'account'){ %> active <% } %>"><img src="<%= RELATIVE_PATH %>img/common/icon-01.png" alt="Tài khoản">Tài khoản</a></li>
 				<li><a href="" class="<% if(pageData.parentId1 == 'card_center'){ %> active <% } %>"><img src="<%= RELATIVE_PATH %>img/common/icon-02.png" alt="Trung tâm nạp">Trung tâm nạp</a></li>
 				<li><a href="" class="<% if(pageData.parentId1 == 'support'){ %> active <% } %>"><img src="<%= RELATIVE_PATH %>img/common/icon-03.png" alt="Hỗ trợ khách hàng">Hỗ trợ khách hàng</a></li>
 			</ul>
@@ -25,6 +25,60 @@
 						</li>
 						<li class="header-nav__menu-item">
 							<a href="">Yêu cầu hỗ trợ của bạn</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header-account c-txt__basic">
+					<div class="header-account__img">
+						<img src="<%= RELATIVE_PATH %>img/common/avatar.png" alt="3CGAME">
+					</div>
+					<div class="header-account__content">
+						<div class="header-account__content-heading">
+							<div class="header-account__content-heading-img">
+								<img src="<%= RELATIVE_PATH %>img/common/avatar.png" alt="3CGAME">
+							</div>
+							<div class="header-account__content-heading-name">
+								<p>
+									Nam Duong
+								</p>
+								<p>
+									#5438951
+								</p>
+							</div>
+						</div>
+						<dl class="header-account__content-heading-coi">
+							<dt>Số dư ví:</dt>
+							<dd>3.000 <img src="<%= RELATIVE_PATH %>img/common/coi.png" alt="3CGAME"></dd>
+						</dl>
+						<dl class="header-account__content-language sp-tb">
+							<dt>Ngôn ngữ  <span>VN</span></dt>
+							<dd>
+								<a href="" class="active">Tiếng Việt</a>
+								<a href="">English</a>
+								<a href="">中国人</a>
+							</dd>
+						</dl>
+						<a href="" class="header-account__content-link"><img src="<%= RELATIVE_PATH %>img/common/lock.png" alt="3CGAME">Đổi mật khẩu</a>
+						<a href="" class="header-account__content-link"><img src="<%= RELATIVE_PATH %>img/common/logout.png" alt="3CGAME">Đăng xuất</a>
+					</div>
+				</div>
+				<div class="header-language pc-tb">
+					<span>VI</span>
+					<ul>
+						<li><a href="" class="active">Tiếng Việt</a></li>
+						<li><a href="">English</a></li>
+						<li><a href="">中国人</a></li>
+					</ul>
+				</div>
+			<% }
+			else if(pageData.parentId1 == "account"){ %>
+				<nav class="header-nav">
+					<ul class="header-nav__menu">
+						<li class="header-nav__menu-item">
+							<a href="" >Đăng ký</a>
+						</li>
+						<li class="header-nav__menu-item">
+							<a href="">Đăng Nhập</a>
 						</li>
 					</ul>
 				</nav>
@@ -124,7 +178,8 @@
 						<li><a href="">中国人</a></li>
 					</ul>
 				</div>
-			<% } else { %>
+			<% }
+			else { %>
 				<nav class="header-nav">
 					<ul class="header-nav__menu">
 						<li class="header-nav__menu-item">

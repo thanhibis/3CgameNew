@@ -213,6 +213,12 @@ $('.close-popup').on('click', function () {
   $("html").removeClass("js-locked");
   $(".popup").removeClass("active");
 });
+document.querySelectorAll('.show-pass').forEach(button => {
+  button.addEventListener('click', () => {
+    const input = button.closest('.account-block__item').querySelector('.input-pass');
+    input.type = input.type === 'password' ? 'text' : 'password';
+  });
+});
 const input = document.querySelector('#amount');
 input.addEventListener('input', function () {
   // Chỉ giữ lại số

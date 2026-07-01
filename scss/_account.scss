@@ -1,0 +1,55 @@
+@use "vars" as *;
+
+.mv-account{
+	background: url("../img/account/mv.png")no-repeat;
+	background-size: cover;
+	background-position: top right;
+	color: white;
+	text-align: center;
+	padding: 80px 15px 140px;
+	@include mq(){
+		padding: 40px 15px 180px;
+	}
+}
+
+.sec-account{
+	margin-top: -100px;
+	z-index: 1;
+	padding: 0 0 100px;
+	@include mq(){
+		margin-top: -170px;
+		padding: 0 0 70px;
+	}
+}
+.account-block{
+	background: white;
+	border-radius: 15px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	padding: 30px;
+	max-width: 670px;
+	margin: 0 auto;
+	a{
+		color: $basic;
+		text-decoration: underline;
+	}
+	&__item{
+		position: relative;
+		margin-bottom: 15px;
+		.show-pass{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40px;
+			height: 48px;
+			@include flex(center,center);
+			cursor: pointer;
+			img{
+				width: 16px;
+			}
+		}
+	}
+	&__sub{
+		@include flex(center,center,wrap);
+		padding: 20px 0;
+	}
+}
